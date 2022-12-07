@@ -1,0 +1,22 @@
+---
+title: "Resources"
+output: html_document
+---
+
+### R and R-Studio
+
+[R](http://www.r-project.org) is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is [R-studio](http://www.rstudio.com), that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the lab manual []().
+
+### Additional R resources
+
+1. Google is great, Google your problem
+2. [Stackoverflow](https://stackoverflow.com) is great, google will often take you there because someone has already asked your question, and someone else has answered, usually many people have answered your question many ways.
+
+
+<div class='tableauPlaceholder' id='viz1670405801965' style='position: relative'><noscript><a href='#'><img alt='FilteringByImage ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Im&#47;ImageFilter&#47;FilteringByImage&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ImageFilter&#47;FilteringByImage' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Im&#47;ImageFilter&#47;FilteringByImage&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>    
+
+
+
+```{js,embedcode2, echo = FALSE}    
+var divElement = document.getElementById('viz1670405801965');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);       
+```
