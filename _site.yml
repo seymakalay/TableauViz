@@ -14,14 +14,4 @@ navbar:
   right:
     - href: https://github.com/seymakalay
       icon: fa-github  
-    - text: "Tutorials"
-      icon:  fa-rocket
-      menu:
-      - text: "Machine Learning"
-      - text: "pomodoro"
-        href: pomodoro.tutorial.html
-      - text: "------------"  
-      - text: "Data Visualization"  
-      - text: "pepe"
-        href: pepe.tutorial.html
 output_dir: "docs"
