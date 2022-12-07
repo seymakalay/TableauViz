@@ -1,6 +1,16 @@
 ---
-title: "Resources"
-output: html_document
+#title: "Resources"
+#output: html_document
+title: ""
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    theme: flatly
+    highlight: tango
+#header-includes:
+#- \usepackage{caption}  
+   #  - \usepackage{placeins}
 ---
 
 ### R and R-Studio

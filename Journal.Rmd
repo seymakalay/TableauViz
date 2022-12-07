@@ -1,14 +1,28 @@
 ---
-title: "Journal"
+#title: "Journal"
+#output:
+#  html_document:
+#    toc: true
+#    toc_float: true
+#    collapsed: false
+#    number_sections: false
+#    toc_depth: 1
+#    #code_folding: hide
+title: ""
 output:
   html_document:
-    toc: true
-    toc_float: true
-    collapsed: false
-    number_sections: false
+    theme: flatly
+    highlight: tango
+    toc: yes
+    toc_float: yes
+    collapsed: no
+    number_sections: no
     toc_depth: 1
-    #code_folding: hide
+  pdf_document:
+    toc: yes
+    toc_depth: '1'
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)

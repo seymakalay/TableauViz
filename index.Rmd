@@ -1,6 +1,11 @@
 ---
-title: "TITLE"
-output: html_document
+#title: "TITLE"
+#output: html_document
+title: ""
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
 ---
 
 <style type="text/css">
@@ -23,7 +28,7 @@ output: html_document
 1. Source code [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
 
 
-Just trying to combine things.
+Just trying to combine HTML AND TABLEAU.
 
 
 

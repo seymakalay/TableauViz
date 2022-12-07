@@ -5,11 +5,23 @@ navbar:
     - text: "Home"
       href: index.html
       icon: fa-home
-    - text: "Write somethin"
+    - text: "Write something"
       href: Journal.html
+      icon: fa-book
     - text: "Links"
       href: Links.html
+      icon:  fa-link
   right:
     - href: https://github.com/seymakalay
-      icon: fa-github     
+      icon: fa-github  
+    - text: "Tutorials"
+      icon:  fa-rocket
+      menu:
+      - text: "Machine Learning"
+      - text: "pomodoro"
+        href: pomodoro.tutorial.html
+      - text: "------------"  
+      - text: "Data Visualization"  
+      - text: "pepe"
+        href: pepe.tutorial.html
 output_dir: "docs"

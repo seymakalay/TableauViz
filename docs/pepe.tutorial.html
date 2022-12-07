@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>pepe.tutorial.knit</title>
+
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Insert LOGO</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="Journal.html">
+    <span class="fa fa-book"></span>
+     
+    Write something
+  </a>
+</li>
+<li>
+  <a href="Links.html">
+    <span class="fa fa-link"></span>
+     
+    Links
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/seymakalay">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-rocket"></span>
+     
+    Tutorials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Machine Learning</li>
+    <li>
+      <a href="pomodoro.tutorial.html">pomodoro</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Data Visualization</li>
+    <li>
+      <a href="pepe.tutorial.html">pepe</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<!--\1  <span style="color:red">pomodoro</span> \1-->
+<!--\1   \1-->
+<div id="objectives" class="section level2">
+<h2>Objectives</h2>
+<blockquote>
+<p>This tutorial is meant to introduce <a
+href="https://github.com/seymakalay/pepe">pepe</a> package only, using a
+case study. The purpose of this package is presanting the tables and
+plots with ease.</p>
+</blockquote>
+<div id="dataset" class="section level3">
+<h3>Dataset</h3>
+<p>After cleaning the data set (<code>sample_data</code>) for this case
+study, we can visualize the summary statistics of the given data.</p>
+<center>
+<div class="figure">
+<img src="images/sum.stats.png" style="width:85.0%" alt="" />
+<p class="caption">Summary Statistics</p>
+</div>
+</center>
+<p>Note: HR stands for Household Registration. NW-HE is net-worth minus
+home equity. All the asset variables (e.g. income, net-worth, NW-HE, and
+liquid assets are in Chinese renminbi (CNY).</p>
+</div>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Package <code>pepe</code> runs <code>Plot.by.Factr</code>,
+<code>df4.Plot.by.Factr</code>, and <code>Pvot.by.Factr</code>.
+<!--\1  `Stats.by.Factr`, \1--> This package is useful when you need to
+do descriptive stats and plotting for different data splits.</p>
+<div id="installation" class="section level3">
+<h3>Installation</h3>
+<p>You can install <code>pepe</code> from <a
+href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;pepe&quot;)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pepe)</span></code></pre></div>
+</div>
+</div>
+<div id="building-plots" class="section level2">
+<h2>Building plots</h2>
+<div id="plotting" class="section level3">
+<h3>Plotting</h3>
+<p><code>Plot.by.Factr</code> function will create plotting by two level
+factor variables (<code>var</code>).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> sample_data[<span class="fu">c</span>(<span class="st">&quot;Formal&quot;</span>,<span class="st">&quot;Informal&quot;</span>,<span class="st">&quot;L.Both&quot;</span>,<span class="st">&quot;No.Loan&quot;</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;sex&quot;</span>,<span class="st">&quot;educ&quot;</span>,<span class="st">&quot;political.afl&quot;</span>,<span class="st">&quot;married&quot;</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;havejob&quot;</span>,<span class="st">&quot;rural&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;Income&quot;</span>,<span class="st">&quot;Networth&quot;</span>,<span class="st">&quot;Liquid.Assets&quot;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;NW.HE&quot;</span>,<span class="st">&quot;fin.knowldge&quot;</span>,<span class="st">&quot;fin.intermdiaries&quot;</span>)]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> CN <span class="ot">=</span> <span class="fu">colnames</span>(df)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> var <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;educ&quot;</span>,<span class="st">&quot;rural&quot;</span>,<span class="st">&quot;sex&quot;</span>,<span class="st">&quot;havejob&quot;</span>,<span class="st">&quot;political.afl&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> name.levels <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Formal&quot;</span>,<span class="st">&quot;Informal&quot;</span>,<span class="st">&quot;L.Both&quot;</span>,<span class="st">&quot;No.Loan&quot;</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;sex&quot;</span>,<span class="st">&quot;educ&quot;</span>,<span class="st">&quot;political.afl&quot;</span>,<span class="st">&quot;married&quot;</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;havejob&quot;</span>,<span class="st">&quot;rural&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;Income&quot;</span>,<span class="st">&quot;Networth&quot;</span>,<span class="st">&quot;Liquid.Assets&quot;</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;NW.HE&quot;</span>,<span class="st">&quot;fin.knowldge&quot;</span>,<span class="st">&quot;fin.intermdiaries&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>XXX <span class="ot">&lt;-</span> <span class="fu">df4.Plot.by.Factr</span>(var,df)<span class="sc">$</span>Summ.Stats.long</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Plot.by.Factr</span>(XXX, name.levels)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Selecting by Mean</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: Transformation introduced infinite values in continuous x-axis</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Transformation introduced infinite values in continuous x-axis</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Selecting by Mean</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</span></span></code></pre></div>
+<p><img src="pepe.tutorial_files/figure-html/plot%20-1.png" width="960" /></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis
+#&gt; Selecting by Mean
+#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</code></pre>
+<p><img src="pepe.tutorial_files/figure-html/plot%20-2.png" width="960" /></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis
+#&gt; Selecting by Mean
+#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</code></pre>
+<p><img src="pepe.tutorial_files/figure-html/plot%20-3.png" width="960" /></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis
+#&gt; Selecting by Mean
+#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</code></pre>
+<p><img src="pepe.tutorial_files/figure-html/plot%20-4.png" width="960" /></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis</code></pre>
+<p><img src="pepe.tutorial_files/figure-html/plot%20-5.png" width="960" /></p>
+</div>
+</div>
+<div id="building-tables" class="section level2">
+<h2>Building tables</h2>
+<div id="summary-statistics" class="section level3">
+<h3>Summary statistics</h3>
+<p><code>df4.Plot.by.Factr</code> function will create group stats.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df4.Plot.by.Factr</span>(var,df)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[1]]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                       educ_0      educ_1  educ_diff</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   56.233      48.944      7.289</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             50112.134  111281.618  61169.485</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          498209.669 1270342.194 772132.524</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     542379.811 1343952.158 801572.347</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             482692.708 1187307.896 704615.189</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.059       0.238      0.179</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.172       0.071      0.101</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.041       0.062      0.020</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.727       0.629      0.098</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.778       0.730      0.049</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.000       1.000      1.000</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.122       0.341      0.219</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.859       0.861      0.002</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.627       0.671      0.044</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.562       0.879      0.317</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.019       0.129      0.110</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.179       0.196      0.017</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[2]]</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                      rural_0     rural_1 rural_diff</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   55.830      52.914      2.917</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             41979.507   83801.586  41822.079</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          283621.530  980214.349 696592.819</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     320888.314 1042114.177 721225.863</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             274315.470  928913.998 654598.528</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.047       0.152      0.104</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.216       0.101      0.114</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.049       0.047      0.002</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.688       0.700      0.012</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.878       0.704      0.174</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.116       0.425      0.309</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.125       0.226      0.100</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.886       0.847      0.039</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.773       0.574      0.198</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.000       1.000      1.000</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.017       0.074      0.057</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.195       0.180      0.015</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[3]]</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                        sex_0      sex_1   sex_diff</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   54.226     53.792      0.434</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             69848.240  69695.249    152.991</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          856991.073 711293.342 145697.731</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     913497.514 764005.787 149491.727</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             813350.902 676132.915 137217.987</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.138      0.110      0.028</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.111      0.149      0.038</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.043      0.049      0.007</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.709      0.692      0.017</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.000      1.000      1.000</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.366      0.307      0.059</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.159      0.202      0.043</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.691      0.913      0.222</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.438      0.704      0.266</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.828      0.613      0.215</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.067      0.050      0.017</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.176      0.187      0.011</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[4]]</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                    havejob_0  havejob_1 havejob_diff</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   63.576     48.475       15.101</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             56781.006  76982.126    20201.120</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          757974.392 739081.250    18893.142</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     805614.836 796037.507     9577.329</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             742160.748 689950.830    52209.918</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.058      0.149        0.092</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.114      0.154        0.040</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.024      0.062        0.038</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.804      0.635        0.169</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.628      0.838        0.210</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.294      0.336        0.041</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.219      0.177        0.042</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.784      0.903        0.119</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.000      1.000        1.000</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.787      0.595        0.192</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.046      0.059        0.013</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.195      0.179        0.017</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[5]]</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   political.afl_0 political.afl_1 political.afl_diff</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                        53.461          55.724              2.263</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income                  64184.651       93097.169          28912.518</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth               661085.850     1102973.001         441887.150</span></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets          711676.724     1169314.401         457637.677</span></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE                  630009.072     1040123.664         410114.592</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                      0.101           0.182              0.081</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal                    0.154           0.081              0.073</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                      0.047           0.051              0.004</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                     0.698           0.686              0.013</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                         0.753           0.803              0.050</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                        0.262           0.569              0.308</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl               0.000           1.000              1.000</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                     0.852           0.894              0.042</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                     0.653           0.591              0.063</span></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                       0.636           0.780              0.145</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge                0.040           0.116              0.076</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries           0.188           0.171              0.017</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[1]]</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff Levels        Mean          Variable</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       7.289 educ_0      56.233               age</span></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   61169.485 educ_0   50112.134            Income</span></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  772132.524 educ_0  498209.669          Networth</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  801572.347 educ_0  542379.811     Liquid.Assets</span></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  704615.189 educ_0  482692.708             NW.HE</span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.179 educ_0       0.059            Formal</span></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.101 educ_0       0.172          Informal</span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.020 educ_0       0.041            L.Both</span></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.098 educ_0       0.727           No.Loan</span></span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      0.049 educ_0       0.778               sex</span></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      1.000 educ_0       0.000              educ</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      0.219 educ_0       0.122     political.afl</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.002 educ_0       0.859           married</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.044 educ_0       0.627           havejob</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      0.317 educ_0       0.562             rural</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.110 educ_0       0.019      fin.knowldge</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.017 educ_0       0.179 fin.intermdiaries</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      7.289 educ_1      48.944               age</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  61169.485 educ_1  111281.618            Income</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 772132.524 educ_1 1270342.194          Networth</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 801572.347 educ_1 1343952.158     Liquid.Assets</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 704615.189 educ_1 1187307.896             NW.HE</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.179 educ_1       0.238            Formal</span></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.101 educ_1       0.071          Informal</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.020 educ_1       0.062            L.Both</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.098 educ_1       0.629           No.Loan</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      0.049 educ_1       0.730               sex</span></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      1.000 educ_1       1.000              educ</span></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      0.219 educ_1       0.341     political.afl</span></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.002 educ_1       0.861           married</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.044 educ_1       0.671           havejob</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      0.317 educ_1       0.879             rural</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.110 educ_1       0.129      fin.knowldge</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.017 educ_1       0.196 fin.intermdiaries</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[2]]</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff  Levels        Mean          Variable</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       2.917 rural_0      55.830               age</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   41822.079 rural_0   41979.507            Income</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  696592.819 rural_0  283621.530          Networth</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  721225.863 rural_0  320888.314     Liquid.Assets</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  654598.528 rural_0  274315.470             NW.HE</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.104 rural_0       0.047            Formal</span></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.114 rural_0       0.216          Informal</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.002 rural_0       0.049            L.Both</span></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.012 rural_0       0.688           No.Loan</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      0.174 rural_0       0.878               sex</span></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      0.309 rural_0       0.116              educ</span></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      0.100 rural_0       0.125     political.afl</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.039 rural_0       0.886           married</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.198 rural_0       0.773           havejob</span></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      1.000 rural_0       0.000             rural</span></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.057 rural_0       0.017      fin.knowldge</span></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.015 rural_0       0.195 fin.intermdiaries</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      2.917 rural_1      52.914               age</span></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  41822.079 rural_1   83801.586            Income</span></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 696592.819 rural_1  980214.349          Networth</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 721225.863 rural_1 1042114.177     Liquid.Assets</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 654598.528 rural_1  928913.998             NW.HE</span></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.104 rural_1       0.152            Formal</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.114 rural_1       0.101          Informal</span></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.002 rural_1       0.047            L.Both</span></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.012 rural_1       0.700           No.Loan</span></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      0.174 rural_1       0.704               sex</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      0.309 rural_1       0.425              educ</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      0.100 rural_1       0.226     political.afl</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.039 rural_1       0.847           married</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.198 rural_1       0.574           havejob</span></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      1.000 rural_1       1.000             rural</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.057 rural_1       0.074      fin.knowldge</span></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.015 rural_1       0.180 fin.intermdiaries</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[3]]</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff Levels       Mean          Variable</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       0.434  sex_0     54.226               age</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2     152.991  sex_0  69848.240            Income</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  145697.731  sex_0 856991.073          Networth</span></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  149491.727  sex_0 913497.514     Liquid.Assets</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  137217.987  sex_0 813350.902             NW.HE</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.028  sex_0      0.138            Formal</span></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.038  sex_0      0.111          Informal</span></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.007  sex_0      0.043            L.Both</span></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.017  sex_0      0.709           No.Loan</span></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      1.000  sex_0      0.000               sex</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      0.059  sex_0      0.366              educ</span></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      0.043  sex_0      0.159     political.afl</span></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.222  sex_0      0.691           married</span></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.266  sex_0      0.438           havejob</span></span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      0.215  sex_0      0.828             rural</span></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.017  sex_0      0.067      fin.knowldge</span></span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.011  sex_0      0.176 fin.intermdiaries</span></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      0.434  sex_1     53.792               age</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19    152.991  sex_1  69695.249            Income</span></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 145697.731  sex_1 711293.342          Networth</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 149491.727  sex_1 764005.787     Liquid.Assets</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 137217.987  sex_1 676132.915             NW.HE</span></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.028  sex_1      0.110            Formal</span></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.038  sex_1      0.149          Informal</span></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.007  sex_1      0.049            L.Both</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.017  sex_1      0.692           No.Loan</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      1.000  sex_1      1.000               sex</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      0.059  sex_1      0.307              educ</span></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      0.043  sex_1      0.202     political.afl</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.222  sex_1      0.913           married</span></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.266  sex_1      0.704           havejob</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      0.215  sex_1      0.613             rural</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.017  sex_1      0.050      fin.knowldge</span></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.011  sex_1      0.187 fin.intermdiaries</span></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[4]]</span></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         Diff    Levels       Mean          Variable</span></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     15.101 havejob_0     63.576               age</span></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  20201.120 havejob_0  56781.006            Income</span></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  18893.142 havejob_0 757974.392          Networth</span></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   9577.329 havejob_0 805614.836     Liquid.Assets</span></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  52209.918 havejob_0 742160.748             NW.HE</span></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      0.092 havejob_0      0.058            Formal</span></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7      0.040 havejob_0      0.114          Informal</span></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8      0.038 havejob_0      0.024            L.Both</span></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9      0.169 havejob_0      0.804           No.Loan</span></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10     0.210 havejob_0      0.628               sex</span></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11     0.041 havejob_0      0.294              educ</span></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12     0.042 havejob_0      0.219     political.afl</span></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13     0.119 havejob_0      0.784           married</span></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14     1.000 havejob_0      0.000           havejob</span></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15     0.192 havejob_0      0.787             rural</span></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16     0.013 havejob_0      0.046      fin.knowldge</span></span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17     0.017 havejob_0      0.195 fin.intermdiaries</span></span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18    15.101 havejob_1     48.475               age</span></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19 20201.120 havejob_1  76982.126            Income</span></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 18893.142 havejob_1 739081.250          Networth</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21  9577.329 havejob_1 796037.507     Liquid.Assets</span></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 52209.918 havejob_1 689950.830             NW.HE</span></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23     0.092 havejob_1      0.149            Formal</span></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24     0.040 havejob_1      0.154          Informal</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25     0.038 havejob_1      0.062            L.Both</span></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26     0.169 havejob_1      0.635           No.Loan</span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27     0.210 havejob_1      0.838               sex</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28     0.041 havejob_1      0.336              educ</span></span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29     0.042 havejob_1      0.177     political.afl</span></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30     0.119 havejob_1      0.903           married</span></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31     1.000 havejob_1      1.000           havejob</span></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32     0.192 havejob_1      0.595             rural</span></span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33     0.013 havejob_1      0.059      fin.knowldge</span></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34     0.017 havejob_1      0.179 fin.intermdiaries</span></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[5]]</span></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff          Levels        Mean          Variable</span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       2.263 political.afl_0      53.461               age</span></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   28912.518 political.afl_0   64184.651            Income</span></span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  441887.150 political.afl_0  661085.850          Networth</span></span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  457637.677 political.afl_0  711676.724     Liquid.Assets</span></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  410114.592 political.afl_0  630009.072             NW.HE</span></span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.081 political.afl_0       0.101            Formal</span></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.073 political.afl_0       0.154          Informal</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.004 political.afl_0       0.047            L.Both</span></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.013 political.afl_0       0.698           No.Loan</span></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      0.050 political.afl_0       0.753               sex</span></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      0.308 political.afl_0       0.262              educ</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      1.000 political.afl_0       0.000     political.afl</span></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.042 political.afl_0       0.852           married</span></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.063 political.afl_0       0.653           havejob</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      0.145 political.afl_0       0.636             rural</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.076 political.afl_0       0.040      fin.knowldge</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.017 political.afl_0       0.188 fin.intermdiaries</span></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      2.263 political.afl_1      55.724               age</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  28912.518 political.afl_1   93097.169            Income</span></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 441887.150 political.afl_1 1102973.001          Networth</span></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 457637.677 political.afl_1 1169314.401     Liquid.Assets</span></span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 410114.592 political.afl_1 1040123.664             NW.HE</span></span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.081 political.afl_1       0.182            Formal</span></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.073 political.afl_1       0.081          Informal</span></span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.004 political.afl_1       0.051            L.Both</span></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.013 political.afl_1       0.686           No.Loan</span></span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      0.050 political.afl_1       0.803               sex</span></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      0.308 political.afl_1       0.569              educ</span></span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      1.000 political.afl_1       1.000     political.afl</span></span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.042 political.afl_1       0.894           married</span></span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.063 political.afl_1       0.591           havejob</span></span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      0.145 political.afl_1       0.780             rural</span></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.076 political.afl_1       0.116      fin.knowldge</span></span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.017 political.afl_1       0.171 fin.intermdiaries</span></span></code></pre></div>
+<!--\1  
+`Stats.by.Factr` function will create group stats.
+
+
+```r
+ Stats.by.Factr(var, df)
+#> $educ.0
+#>                         mean         sd     n   median        min      max
+#> Formal*                 1.06       0.24 22256      1.0        1.0        2
+#> Informal*               1.17       0.38 22256      1.0        1.0        2
+#> L.Both*                 1.04       0.20 22256      1.0        1.0        2
+#> No.Loan*                1.73       0.45 22256      2.0        1.0        2
+#> sex*                    1.78       0.42 22256      2.0        1.0        2
+#> educ*                   1.00       0.00 22256      1.0        1.0        1
+#> political.afl*          1.12       0.33 22256      1.0        1.0        2
+#> married*                1.86       0.35 22256      2.0        1.0        2
+#> havejob*                1.63       0.48 22256      2.0        1.0        2
+#> rural*                  1.56       0.50 22256      2.0        1.0        2
+#> age                    56.23      13.40 22256     57.0       17.0      101
+#> Income              50112.13  127502.75 22256  31681.5  -800000.0  5000000
+#> Networth           498209.67 1187345.68 22256 193778.0  -627904.2 19999748
+#> Liquid.Assets      542379.81 1206224.03 22256 229982.1        0.0 20000000
+#> NW.HE              482692.71 1143011.42 22256 189322.6 -1490700.0 19999748
+#> fin.knowldge*           1.02       0.14 22256      1.0        1.0        2
+#> fin.intermdiaries*      1.18       0.38 22256      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             3.74    11.97
+#> Informal*           1.74     1.02
+#> L.Both*             4.60    19.21
+#> No.Loan*           -1.02    -0.96
+#> sex*               -1.34    -0.20
+#> educ*                NaN      NaN
+#> political.afl*      2.32     3.36
+#> married*           -2.07     2.28
+#> havejob*           -0.53    -1.72
+#> rural*             -0.25    -1.94
+#> age                 0.00    -0.43
+#> Income             23.96   819.95
+#> Networth            9.07   117.71
+#> Liquid.Assets       8.97   115.38
+#> NW.HE               8.93   116.05
+#> fin.knowldge*       6.98    46.77
+#> fin.intermdiaries*  1.67     0.80
+#> 
+#> $educ.1
+#>                          mean         sd     n   median        min      max
+#> Formal*                  1.24       0.43 10509      1.0        1.0        2
+#> Informal*                1.07       0.26 10509      1.0        1.0        2
+#> L.Both*                  1.06       0.24 10509      1.0        1.0        2
+#> No.Loan*                 1.63       0.48 10509      2.0        1.0        2
+#> sex*                     1.73       0.44 10509      2.0        1.0        2
+#> educ*                    2.00       0.00 10509      2.0        2.0        2
+#> political.afl*           1.34       0.47 10509      1.0        1.0        2
+#> married*                 1.86       0.35 10509      2.0        1.0        2
+#> havejob*                 1.67       0.47 10509      2.0        1.0        2
+#> rural*                   1.88       0.33 10509      2.0        1.0        2
+#> age                     48.94      14.82 10509     49.0       17.0       93
+#> Income              111281.62  242540.61 10509  66840.0  -800000.0  5000000
+#> Networth           1270342.19 2151333.30 10509 604400.0  -277925.9 19956044
+#> Liquid.Assets      1343952.16 2190862.93 10509 669550.0        0.0 20000000
+#> NW.HE              1187307.90 2040298.96 10509 558724.2 -3614776.0 19956044
+#> fin.knowldge*            1.13       0.34 10509      1.0        1.0        2
+#> fin.intermdiaries*       1.20       0.40 10509      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             1.23    -0.49
+#> Informal*           3.34     9.16
+#> L.Both*             3.64    11.23
+#> No.Loan*           -0.53    -1.71
+#> sex*               -1.03    -0.93
+#> educ*                NaN      NaN
+#> political.afl*      0.67    -1.55
+#> married*           -2.09     2.37
+#> havejob*           -0.73    -1.47
+#> rural*             -2.32     3.39
+#> age                 0.27    -0.50
+#> Income             11.91   197.81
+#> Networth            4.65    28.89
+#> Liquid.Assets       4.63    28.72
+#> NW.HE               4.71    30.01
+#> fin.knowldge*       2.21     2.90
+#> fin.intermdiaries*  1.53     0.34
+#> 
+#> $rural.0
+#>                         mean        sd     n   median        min      max  skew
+#> Formal*                 1.05      0.21 11023      1.0        1.0        2  4.27
+#> Informal*               1.22      0.41 11023      1.0        1.0        2  1.38
+#> L.Both*                 1.05      0.22 11023      1.0        1.0        2  4.17
+#> No.Loan*                1.69      0.46 11023      2.0        1.0        2 -0.81
+#> sex*                    1.88      0.33 11023      2.0        1.0        2 -2.31
+#> educ*                   1.12      0.32 11023      1.0        1.0        2  2.40
+#> political.afl*          1.13      0.33 11023      1.0        1.0        2  2.26
+#> married*                1.89      0.32 11023      2.0        1.0        2 -2.43
+#> havejob*                1.77      0.42 11023      2.0        1.0        2 -1.30
+#> rural*                  1.00      0.00 11023      1.0        1.0        1   NaN
+#> age                    55.83     12.52 11023     55.0       17.0       99  0.05
+#> Income              41979.51 113869.22 11023  23100.0  -800000.0  5000000 25.49
+#> Networth           283621.53 765713.39 11023 117909.1  -315514.9 19842100 12.53
+#> Liquid.Assets      320888.31 782991.65 11023 150426.4        0.0 20000000 12.32
+#> NW.HE              274315.47 739872.21 11023 114235.3 -1136884.0 19842100 12.78
+#> fin.knowldge*           1.02      0.13 11023      1.0        1.0        2  7.48
+#> fin.intermdiaries*      1.19      0.40 11023      1.0        1.0        2  1.54
+#>                    kurtosis
+#> Formal*               16.20
+#> Informal*             -0.09
+#> L.Both*               15.39
+#> No.Loan*              -1.34
+#> sex*                   3.36
+#> educ*                  3.78
+#> political.afl*         3.13
+#> married*               3.90
+#> havejob*              -0.31
+#> rural*                  NaN
+#> age                   -0.33
+#> Income              1015.45
+#> Networth             224.93
+#> Liquid.Assets        218.09
+#> NW.HE                237.81
+#> fin.knowldge*         53.95
+#> fin.intermdiaries*     0.38
+#> 
+#> $rural.1
+#>                          mean         sd     n   median        min      max
+#> Formal*                  1.15       0.36 21742      1.0        1.0        2
+#> Informal*                1.10       0.30 21742      1.0        1.0        2
+#> L.Both*                  1.05       0.21 21742      1.0        1.0        2
+#> No.Loan*                 1.70       0.46 21742      2.0        1.0        2
+#> sex*                     1.70       0.46 21742      2.0        1.0        2
+#> educ*                    1.42       0.49 21742      1.0        1.0        2
+#> political.afl*           1.23       0.42 21742      1.0        1.0        2
+#> married*                 1.85       0.36 21742      2.0        1.0        2
+#> havejob*                 1.57       0.49 21742      2.0        1.0        2
+#> rural*                   2.00       0.00 21742      2.0        2.0        2
+#> age                     52.91      15.01 21742     52.0       17.0      101
+#> Income               83801.59  197838.45 21742  51028.0  -800000.0  5000000
+#> Networth            980214.35 1848058.17 21742 437612.4  -627904.2 19999748
+#> Liquid.Assets      1042114.18 1880008.03 21742 494240.0        0.0 20000000
+#> NW.HE               928914.00 1758036.37 21742 413127.2 -3614776.0 19999748
+#> fin.knowldge*            1.07       0.26 21742      1.0        1.0        2
+#> fin.intermdiaries*       1.18       0.38 21742      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             1.94     1.77
+#> Informal*           2.65     5.00
+#> L.Both*             4.26    16.18
+#> No.Loan*           -0.87    -1.24
+#> sex*               -0.89    -1.20
+#> educ*               0.30    -1.91
+#> political.afl*      1.31    -0.28
+#> married*           -1.93     1.71
+#> havejob*           -0.30    -1.91
+#> rural*               NaN      NaN
+#> age                 0.07    -0.62
+#> Income             14.90   308.53
+#> Networth            5.64    43.48
+#> Liquid.Assets       5.61    43.02
+#> NW.HE               5.66    44.32
+#> fin.knowldge*       3.27     8.68
+#> fin.intermdiaries*  1.67     0.79
+#> 
+#> $sex.0
+#>                         mean         sd    n   median        min      max  skew
+#> Formal*                 1.14       0.34 7774      1.0        1.0        2  2.10
+#> Informal*               1.11       0.31 7774      1.0        1.0        2  2.48
+#> L.Both*                 1.04       0.20 7774      1.0        1.0        2  4.51
+#> No.Loan*                1.71       0.45 7774      2.0        1.0        2 -0.92
+#> sex*                    1.00       0.00 7774      1.0        1.0        1   NaN
+#> educ*                   1.37       0.48 7774      1.0        1.0        2  0.56
+#> political.afl*          1.16       0.37 7774      1.0        1.0        2  1.86
+#> married*                1.69       0.46 7774      2.0        1.0        2 -0.83
+#> havejob*                1.44       0.50 7774      1.0        1.0        2  0.25
+#> rural*                  1.83       0.38 7774      2.0        1.0        2 -1.73
+#> age                    54.23      15.82 7774     54.0       17.0      101 -0.02
+#> Income              69848.24  162853.21 7774  41200.0  -497000.0  5000000 15.92
+#> Networth           856991.07 1709612.37 7774 343647.5  -224187.3 19968200  5.79
+#> Liquid.Assets      913497.51 1744638.87 7774 392846.6        0.0 20000000  5.78
+#> NW.HE              813350.90 1616830.46 7774 323163.8 -1294996.0 19968200  5.69
+#> fin.knowldge*           1.07       0.25 7774      1.0        1.0        2  3.45
+#> fin.intermdiaries*      1.18       0.38 7774      1.0        1.0        2  1.70
+#>                    kurtosis
+#> Formal*                2.41
+#> Informal*              4.16
+#> L.Both*               18.31
+#> No.Loan*              -1.16
+#> sex*                    NaN
+#> educ*                 -1.69
+#> political.afl*         1.47
+#> married*              -1.32
+#> havejob*              -1.94
+#> rural*                 1.00
+#> age                   -0.71
+#> Income               385.60
+#> Networth              47.07
+#> Liquid.Assets         46.88
+#> NW.HE                 46.02
+#> fin.knowldge*          9.90
+#> fin.intermdiaries*     0.90
+#> 
+#> $sex.1
+#>                         mean         sd     n   median        min      max
+#> Formal*                 1.11       0.31 24991      1.0        1.0        2
+#> Informal*               1.15       0.36 24991      1.0        1.0        2
+#> L.Both*                 1.05       0.22 24991      1.0        1.0        2
+#> No.Loan*                1.69       0.46 24991      2.0        1.0        2
+#> sex*                    2.00       0.00 24991      2.0        2.0        2
+#> educ*                   1.31       0.46 24991      1.0        1.0        2
+#> political.afl*          1.20       0.40 24991      1.0        1.0        2
+#> married*                1.91       0.28 24991      2.0        1.0        2
+#> havejob*                1.70       0.46 24991      2.0        1.0        2
+#> rural*                  1.61       0.49 24991      2.0        1.0        2
+#> age                    53.79      13.77 24991     53.0       17.0       98
+#> Income              69695.25  178977.35 24991  41906.0  -800000.0  5000000
+#> Networth           711293.34 1567726.43 24991 268824.5  -627904.2 19999748
+#> Liquid.Assets      764005.79 1595467.69 24991 311500.0        0.0 20000000
+#> NW.HE              676132.91 1496042.85 24991 256900.0 -3614776.0 19999748
+#> fin.knowldge*           1.05       0.22 24991      1.0        1.0        2
+#> fin.intermdiaries*      1.19       0.39 24991      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             2.49     4.22
+#> Informal*           1.97     1.90
+#> L.Both*             4.15    15.25
+#> No.Loan*           -0.83    -1.31
+#> sex*                 NaN      NaN
+#> educ*               0.84    -1.30
+#> political.afl*      1.48     0.20
+#> married*           -2.92     6.54
+#> havejob*           -0.90    -1.20
+#> rural*             -0.46    -1.79
+#> age                 0.03    -0.45
+#> Income             16.84   396.16
+#> Networth            6.77    62.97
+#> Liquid.Assets       6.71    61.89
+#> NW.HE               6.85    65.14
+#> fin.knowldge*       4.11    14.85
+#> fin.intermdiaries*  1.60     0.57
+#> 
+#> $havejob.0
+#>                         mean         sd     n   median        min      max
+#> Formal*                 1.06       0.23 11760      1.0        1.0        2
+#> Informal*               1.11       0.32 11760      1.0        1.0        2
+#> L.Both*                 1.02       0.15 11760      1.0        1.0        2
+#> No.Loan*                1.80       0.40 11760      2.0        1.0        2
+#> sex*                    1.63       0.48 11760      2.0        1.0        2
+#> educ*                   1.29       0.46 11760      1.0        1.0        2
+#> political.afl*          1.22       0.41 11760      1.0        1.0        2
+#> married*                1.78       0.41 11760      2.0        1.0        2
+#> havejob*                1.00       0.00 11760      1.0        1.0        1
+#> rural*                  1.79       0.41 11760      2.0        1.0        2
+#> age                    63.58      13.10 11760     65.0       17.0      101
+#> Income              56781.01  155653.05 11760  36600.0  -800000.0  5000000
+#> Networth           757974.39 1474245.30 11760 306132.7  -627904.2 19951804
+#> Liquid.Assets      805614.84 1495360.94 11760 351125.2        0.0 20000000
+#> NW.HE              742160.75 1432865.69 11760 300375.0 -1017962.0 19951804
+#> fin.knowldge*           1.05       0.21 11760      1.0        1.0        2
+#> fin.intermdiaries*      1.20       0.40 11760      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             3.79    12.35
+#> Informal*           2.43     3.88
+#> L.Both*             6.28    37.47
+#> No.Loan*           -1.53     0.36
+#> sex*               -0.53    -1.72
+#> educ*               0.90    -1.18
+#> political.afl*      1.36    -0.15
+#> married*           -1.38    -0.10
+#> havejob*             NaN      NaN
+#> rural*             -1.40    -0.04
+#> age                -0.67     0.63
+#> Income             21.44   598.68
+#> Networth            6.11    56.40
+#> Liquid.Assets       6.10    56.30
+#> NW.HE               5.91    52.93
+#> fin.knowldge*       4.32    16.66
+#> fin.intermdiaries*  1.54     0.36
+#> 
+#> $havejob.1
+#>                         mean         sd     n   median        min      max
+#> Formal*                 1.15       0.36 21005      1.0        1.0        2
+#> Informal*               1.15       0.36 21005      1.0        1.0        2
+#> L.Both*                 1.06       0.24 21005      1.0        1.0        2
+#> No.Loan*                1.64       0.48 21005      2.0        1.0        2
+#> sex*                    1.84       0.37 21005      2.0        1.0        2
+#> educ*                   1.34       0.47 21005      1.0        1.0        2
+#> political.afl*          1.18       0.38 21005      1.0        1.0        2
+#> married*                1.90       0.30 21005      2.0        1.0        2
+#> havejob*                2.00       0.00 21005      2.0        2.0        2
+#> rural*                  1.59       0.49 21005      2.0        1.0        2
+#> age                    48.48      11.84 21005     49.0       17.0       96
+#> Income              76982.13  184976.46 21005  44543.0  -800000.0  5000000
+#> Networth           739081.25 1671801.15 21005 271012.9  -464159.8 19999748
+#> Liquid.Assets      796037.51 1705697.57 21005 316000.0        0.0 20000000
+#> NW.HE              689950.83 1576458.39 21005 256354.0 -3614776.0 19999748
+#> fin.knowldge*           1.06       0.24 21005      1.0        1.0        2
+#> fin.intermdiaries*      1.18       0.38 21005      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             1.97     1.87
+#> Informal*           1.92     1.68
+#> L.Both*             3.65    11.30
+#> No.Loan*           -0.56    -1.69
+#> sex*               -1.83     1.36
+#> educ*               0.70    -1.52
+#> political.afl*      1.69     0.87
+#> married*           -2.72     5.40
+#> havejob*             NaN      NaN
+#> rural*             -0.39    -1.85
+#> age                 0.06    -0.34
+#> Income             14.98   330.37
+#> Networth            6.61    57.96
+#> Liquid.Assets       6.53    56.79
+#> NW.HE               6.77    61.61
+#> fin.knowldge*       3.74    11.97
+#> fin.intermdiaries*  1.68     0.82
+#> 
+#> $political.afl.0
+#>                         mean         sd     n   median        min      max
+#> Formal*                 1.10       0.30 26479      1.0        1.0        2
+#> Informal*               1.15       0.36 26479      1.0        1.0        2
+#> L.Both*                 1.05       0.21 26479      1.0        1.0        2
+#> No.Loan*                1.70       0.46 26479      2.0        1.0        2
+#> sex*                    1.75       0.43 26479      2.0        1.0        2
+#> educ*                   1.26       0.44 26479      1.0        1.0        2
+#> political.afl*          1.00       0.00 26479      1.0        1.0        1
+#> married*                1.85       0.36 26479      2.0        1.0        2
+#> havejob*                1.65       0.48 26479      2.0        1.0        2
+#> rural*                  1.64       0.48 26479      2.0        1.0        2
+#> age                    53.46      14.07 26479     53.0       17.0      101
+#> Income              64184.65  171285.19 26479  37550.0  -800000.0  5000000
+#> Networth           661085.85 1499929.43 26479 246738.6  -627904.2 19999748
+#> Liquid.Assets      711676.72 1526257.28 26479 289848.1        0.0 20000000
+#> NW.HE              630009.07 1427490.00 26479 236061.6 -2814200.0 19999748
+#> fin.knowldge*           1.04       0.20 26479      1.0        1.0        2
+#> fin.intermdiaries*      1.19       0.39 26479      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             2.65     5.02
+#> Informal*           1.92     1.69
+#> L.Both*             4.27    16.25
+#> No.Loan*           -0.86    -1.25
+#> sex*               -1.17    -0.62
+#> educ*               1.08    -0.82
+#> political.afl*       NaN      NaN
+#> married*           -1.98     1.93
+#> havejob*           -0.64    -1.59
+#> rural*             -0.56    -1.68
+#> age                 0.02    -0.46
+#> Income             17.88   441.53
+#> Networth            7.20    71.35
+#> Liquid.Assets       7.12    70.04
+#> NW.HE               7.20    72.41
+#> fin.knowldge*       4.70    20.11
+#> fin.intermdiaries*  1.60     0.55
+#> 
+#> $political.afl.1
+#>                          mean         sd    n   median        min      max
+#> Formal*                  1.18       0.39 6286      1.0        1.0        2
+#> Informal*                1.08       0.27 6286      1.0        1.0        2
+#> L.Both*                  1.05       0.22 6286      1.0        1.0        2
+#> No.Loan*                 1.69       0.46 6286      2.0        1.0        2
+#> sex*                     1.80       0.40 6286      2.0        1.0        2
+#> educ*                    1.57       0.50 6286      2.0        1.0        2
+#> political.afl*           2.00       0.00 6286      2.0        2.0        2
+#> married*                 1.89       0.31 6286      2.0        1.0        2
+#> havejob*                 1.59       0.49 6286      2.0        1.0        2
+#> rural*                   1.78       0.41 6286      2.0        1.0        2
+#> age                     55.72      15.01 6286     56.0       17.0       98
+#> Income               93097.17  189449.94 6286  61000.0  -800000.0  5000000
+#> Networth           1102973.00 1941971.68 6286 497431.8  -329697.9 19918815
+#> Liquid.Assets      1169314.40 1980845.88 6286 554688.7        0.0 20000000
+#> NW.HE              1040123.66 1851839.13 6286 469564.3 -3614776.0 19918815
+#> fin.knowldge*            1.12       0.32 6286      1.0        1.0        2
+#> fin.intermdiaries*       1.17       0.38 6286      1.0        1.0        2
+#>                     skew kurtosis
+#> Formal*             1.65     0.71
+#> Informal*           3.07     7.43
+#> L.Both*             4.07    14.57
+#> No.Loan*           -0.80    -1.36
+#> sex*               -1.52     0.32
+#> educ*              -0.28    -1.92
+#> political.afl*       NaN      NaN
+#> married*           -2.57     4.58
+#> havejob*           -0.37    -1.86
+#> rural*             -1.35    -0.16
+#> age                -0.02    -0.69
+#> Income             13.23   272.15
+#> Networth            4.89    32.87
+#> Liquid.Assets       4.89    32.95
+#> NW.HE               4.95    34.14
+#> fin.knowldge*       2.40     3.74
+#> fin.intermdiaries*  1.75     1.07
+```
+ \1-->
+</div>
+<div id="percantage-table" class="section level3">
+<h3>Percantage table</h3>
+<p><code>Pvot.by.Factr</code> function will create a percentage table of
+the selected factor variables.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> sample_data[<span class="fu">c</span>(<span class="st">&quot;multi.level&quot;</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Formal&quot;</span>,<span class="st">&quot;L.Both&quot;</span>,<span class="st">&quot;No.Loan&quot;</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;region&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;educ&quot;</span>, <span class="st">&quot;political.afl&quot;</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;married&quot;</span>, <span class="st">&quot;havejob&quot;</span>, <span class="st">&quot;rural&quot;</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;fin.knowldge&quot;</span>, <span class="st">&quot;fin.intermdiaries&quot;</span>)]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">Pvot.by.Factr</span>(df)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                        0      1      3      2</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; multi.level       69.59% 30.41%    NA%    NA%</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal            88.35% 11.65%    NA%    NA%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both            95.21%  4.79%    NA%    NA%</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan           30.41% 69.59%    NA%    NA%</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; region               NA% 48.26% 24.48% 27.26%</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex               23.73% 76.27%    NA%    NA%</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ              67.93% 32.07%    NA%    NA%</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl     80.81% 19.19%    NA%    NA%</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married           13.99% 86.01%    NA%    NA%</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob           35.89% 64.11%    NA%    NA%</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural             33.64% 66.36%    NA%    NA%</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge      94.55%  5.45%    NA%    NA%</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries 81.54% 18.46%    NA%    NA%</span></span></code></pre></div>
+<blockquote>
+<p>Have Fun!</p>
+</blockquote>
+<!--\1  \( \LaTeX \)  Back to top [`<svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>`{=html}](#) \1-->
+<p><a href="#top" style="color:steelblue;" >Back to top</a> <a
+href="#"><svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:2em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg></a></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
