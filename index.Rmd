@@ -1,5 +1,5 @@
 ---
-title: "MyLabJournal"
+title: "TITLE"
 output: html_document
 ---
 
@@ -17,13 +17,13 @@ output: html_document
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
-# **My Lab Journal**
+# **DEMO WORK**
 
 
 1. Source code [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
 
 
-Juas trying to combine things.
+Just trying to combine things.
 
 
 

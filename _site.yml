@@ -1,11 +1,15 @@
-name: "MyLabJournal"
+name: "Insert LOGO"
 navbar:
-  title: "MyLabJournal"
-  right:
+  title: "Insert LOGO"
+  left:
     - text: "Home"
       href: index.html
-    - text: "Journal"
+      icon: fa-home
+    - text: "Write somethin"
       href: Journal.html
     - text: "Links"
       href: Links.html
+  right:
+    - href: https://github.com/seymakalay
+      icon: fa-github     
 output_dir: "docs"
