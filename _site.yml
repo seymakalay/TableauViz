@@ -25,7 +25,9 @@ navbar:
   right:
     - href: https://github.com/seymakalay
       icon: fa-github  
-output_dir: "docs"
+output:
+  html_document:
+    theme: tango
 
 
  

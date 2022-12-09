@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>pomodoro.tutorial.knit</title>
+
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 30px;" src="img.png" /></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="Journal.html">
+    <span class="fa fa-book"></span>
+     
+    Journal
+  </a>
+</li>
+<li>
+  <a href="Links.html">
+    <span class="fa fa-link"></span>
+     
+    Links
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-box"></span>
+     
+    Multi Layers
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="pomodoro.tutorial.html">Menu</a>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">SubMenu</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="pepe.tutorial.html">Item1</a>
+        </li>
+        <li>
+          <a href="https://getbootstrap.com/docs/4.4/components/alerts/">Item2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/seymakalay">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<!--\1  <span style="color:red">pomodoro</span> \1-->
+<!--\1   \1-->
+<div id="objectives" class="section level2">
+<h2>Objectives</h2>
+<blockquote>
+<p>This tutorial is meant to introduce <a
+href="https://github.com/seymakalay/pomodoro">pomodoro</a> package only,
+using a case study. The purpose of this package is modelling and
+reporting the predictive modelling with ease.</p>
+</blockquote>
+<div id="dataset" class="section level3">
+<h3>Dataset</h3>
+<p>After cleaning the data set for this case study, we can visualize the
+summary statistics of the given data.</p>
+<center>
+<div class="figure">
+<img src="images/sum.stats.png" style="width:85.0%" alt="" />
+<p class="caption">Summary Statistics</p>
+</div>
+</center>
+<p>Note: HR stands for Household Registration. NW-HE is net-worth minus
+home equity. All the asset variables (e.g. income, net-worth, NW-HE, and
+liquid assets are in Chinese renminbi (CNY).</p>
+</div>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Package <code>pomodoro</code> runs currently bagging
+(<code>BAG_Model</code>), boosting (<code>GBM_Model</code>), random
+forest (<code>RF_Model</code>), multinominal logistic
+(<code>MLM_Model</code>), and logistic models (<code>GLM_Model</code>).
+This package is useful when you need the compare the predictive modeling
+using the different data splits or/and adding exogenous variables into
+the equation. And it divides the data set into 80/20 train/test set,
+using stratified random sampling and implements 10 cross validation to
+each model.</p>
+<div id="installation" class="section level3">
+<h3>Installation</h3>
+<p>You can install <code>pomodoro</code> from <a
+href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;pomodoro&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pomodoro)</span></code></pre></div>
+</div>
+</div>
+<div id="building-a-selected-model" class="section level2">
+<h2>Building a Selected Model</h2>
+<p>Let’s build <code>RF_Model</code> one of the models which is
+available for this package. In the <code>pomodoro</code> <a
+href="https://cran.r-project.org/web/packages/pomodoro/pomodoro.pdf">help
+field</a> we can see that <code>RF_Model</code> was defined as
+<code>RF_Model(Data, xvar, yvar)</code>.</p>
+<div id="dataset-1" class="section level3">
+<h3>DataSet</h3>
+<p>For the computational purposes lets take the first 1000 rows of the
+<code>sample_data</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> sample_data[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>),]</span></code></pre></div>
+</div>
+<div id="selecting-dependent-variables" class="section level3">
+<h3>Selecting Dependent Variables</h3>
+<p>where <code>xvar</code> is a vector which is defined as below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xvar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;married&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;havejob&quot;</span>, <span class="st">&quot;educ&quot;</span>, <span class="st">&quot;political.afl&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;rural&quot;</span>, <span class="st">&quot;region&quot;</span>, <span class="st">&quot;fin.intermdiaries&quot;</span>, <span class="st">&quot;fin.knowldge&quot;</span>, <span class="st">&quot;income&quot;</span>)</span></code></pre></div>
+</div>
+<div id="selecting-independent-variables" class="section level3">
+<h3>Selecting Independent Variables</h3>
+<p>where <code>yvar</code> is a two or multilevel factor variable which
+is defined as below:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>yvar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Loan.Type&quot;</span>) </span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>yvar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;multi.level&quot;</span>)</span></code></pre></div>
+</div>
+<div id="implemantation" class="section level3">
+<h3>Implemantation</h3>
+<p>We can implement <code>RF_Model</code> for
+<code>yvar &lt;- c("multi.level")</code> as follows,</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> yvar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;multi.level&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> xvar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;married&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;havejob&quot;</span>, <span class="st">&quot;educ&quot;</span>, <span class="st">&quot;political.afl&quot;</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;rural&quot;</span>, <span class="st">&quot;region&quot;</span>, <span class="st">&quot;fin.intermdiaries&quot;</span>, <span class="st">&quot;fin.knowldge&quot;</span>, <span class="st">&quot;income&quot;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># set.seed() for the reproducible outcome.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a> BchMk.RF <span class="ot">&lt;-</span> <span class="fu">RF_Model</span>(sample_data, xvar, yvar)</span></code></pre></div>
+</div>
+<div id="results-of-the-rf_model" class="section level3">
+<h3>Results of the <code>RF_Model</code></h3>
+<p>Using <code>attributes(BchMk.RF)</code>, we can see the outcome
+options.</p>
+<p><code>BchMk.RF$results</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  mtry  Accuracy     Kappa AccuracySD    KappaSD</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">2</span> <span class="fl">0.7640207</span> <span class="fl">0.1712487</span> <span class="fl">0.01929120</span> <span class="fl">0.06294866</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">6</span> <span class="fl">0.7288629</span> <span class="fl">0.1729132</span> <span class="fl">0.06145650</span> <span class="fl">0.15118984</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">11</span> <span class="fl">0.7264250</span> <span class="fl">0.1782029</span> <span class="fl">0.03964603</span> <span class="fl">0.11603731</span></span></code></pre></div>
+<p><code>head(BchMk.RF$Pred_prob)</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    zero   one</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  <span class="fl">0.912</span> <span class="fl">0.088</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  <span class="fl">0.968</span> <span class="fl">0.032</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  <span class="fl">0.520</span> <span class="fl">0.480</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="fl">0.898</span> <span class="fl">0.102</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="dv">24</span> <span class="fl">0.922</span> <span class="fl">0.078</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="dv">33</span> <span class="fl">0.956</span> <span class="fl">0.044</span></span></code></pre></div>
+<p><code>BchMk.RF$Roc</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">multiclass.roc.default</span>(<span class="at">response =</span> Y.test, <span class="at">predictor =</span> Pred.prob)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>Data<span class="sc">:</span> multivariate predictor Pred.prob with <span class="dv">2</span> levels of Y.test<span class="sc">:</span> zero, one.</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>Multi<span class="sc">-</span>class area under the curve<span class="sc">:</span> <span class="fl">0.7143</span></span></code></pre></div>
+<p><code>BchMk.RF$ConfMat</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>      Y.test</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       zero one</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  zero  <span class="dv">140</span>  <span class="dv">43</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  one     <span class="dv">8</span>   <span class="dv">8</span></span></code></pre></div>
+<p><code>BchMk.RF$ACC</code></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7437186</span></span></code></pre></div>
+</div>
+</div>
+<div id="building-an-estimated-models" class="section level2">
+<h2>Building an Estimated Models</h2>
+<p>To model all the data set and its splits, interchangeably with 3
+assets owning variables
+(<code>networth, networth_homequity, and liquid.assets</code>) and given
+an exogenous variable, in this case
+<code>exog = "political.afl"</code>.</p>
+<p>Let’s build <code>RF_Model</code> again but this time . In the
+<code>pomodoro</code> <a
+href="https://cran.r-project.org/web/packages/pomodoro/pomodoro.pdf">help
+field</a> we can see that <code>Estimate_Models</code> was defined as
+<code>Estimate_Models(DataSet = Data, yvar, exog = NULL, xvec = xvar, xadd, type, dnames)</code>.</p>
+<p>We have already defined <code>xvar</code>, <code>yvar</code> and
+<code>Data</code>.</p>
+<div id="selecting-exog-variable" class="section level3">
+<h3>Selecting <code>exog</code> Variable</h3>
+<p><code>exog = "political.afl"</code> will define the data set based on
+the factor levels of the <code>"political.afl"</code> in this case “0”
+and “1”.</p>
+</div>
+<div id="selecting-xadd-variable" class="section level3">
+<h3>Selecting <code>xadd</code> Variable</h3>
+<p><code>xadd</code> is a vector set which are not highly correlated
+with <code>"income"</code> but highly correlated between them. So we
+need to add each variable in
+<code>xadd = c("networth", "networth_homequity", "liquid.assets")</code>
+interchangeably.</p>
+</div>
+<div id="selecting-type-variable" class="section level3">
+<h3>Selecting <code>type</code> Variable</h3>
+<p><code>type</code> can be on of the bagging (<code>BAG</code>),
+boosting (<code>GBM</code>), random forest (<code>RF</code>),
+multinominal logistic (<code>MLM</code>), and logistic models
+(<code>GLM</code>).</p>
+</div>
+<div id="selecting-dnames-variable" class="section level3">
+<h3>Selecting <code>dnames</code> Variable</h3>
+<p><code>dnames</code> is the factor values of <code>exog</code>. For
+example <code>dnames = c("0","1")</code> since there are 2 levels in
+<code>exog = "political.afl"</code> which is “0” and “1”.
+<code>dnames</code> argument is important to avoid confusion when we
+print out the results.</p>
+</div>
+<div id="implemantation-1" class="section level3">
+<h3>Implemantation</h3>
+<p>We can implement <code>Estimate_Models</code> for
+<code>yvar &lt;- c("multi.level")</code> as follows,</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>CCP.RF <span class="ot">&lt;-</span> <span class="fu">Estimate_Models</span>(sample_data, yvar, <span class="at">xvec =</span> xvar, <span class="at">exog =</span> <span class="st">&quot;political.afl&quot;</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a> <span class="at">xadd =</span> <span class="fu">c</span>(<span class="st">&quot;networth&quot;</span>, <span class="st">&quot;networth_homequity&quot;</span>, <span class="st">&quot;liquid.assets&quot;</span>) ,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a> <span class="at">type =</span> <span class="st">&quot;RF&quot;</span>, <span class="at">dnames =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1&quot;</span>))</span></code></pre></div>
+</div>
+<div id="results-of-the-estimate_models" class="section level3">
+<h3>Results of the <code>Estimate_Models</code></h3>
+<p>Using <code>CCP.RF</code>, we can see the outcomes of
+<code>BchMk+networth</code>, <code>BchMk+networth_homequity</code>,
+<code>BchMk+liquid.assets</code> <code>D.0+networth</code>,
+<code>D.0+networth_homequity</code>, <code>D.0+liquid.assets</code>,
+<code>D.1+networth</code>, <code>D.1+networth_homequity</code>, and
+<code>D.1+liquid.assets</code>.</p>
+<p><code>Estimate_Models</code> implemented <code>RF_Model</code>,
+firstly to all data set as it is called <code>BchMk</code>, secondly
+<code>D.0</code> and lastly <code>D.1</code>, adding 3 asset variables
+interchangeably.</p>
+<p>Where <code>D.0</code> and <code>D.1</code> are coming from the
+<code>dnames = c("0","1")</code> and can be interpreted as
+<code>D.0</code> when <code>political.afl == 0</code> and
+<code>D.1</code> when <code>political.afl == 1</code></p>
+<p><code>Estimate_Models</code> reported <code>BchMk</code> with all the
+<code>exog</code> variables and divided all the data set
+(<code>BchMk</code>) in to 2-level, when the observation has
+<code>political.afl == 0</code> or <code>political.afl == 1</code>,</p>
+<p>Since this is a list object we need to use <code>attributes</code> as
+follows,</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span><span class="sc">$</span>results</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  mtry  Accuracy     Kappa AccuracySD   KappaSD</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">2</span> <span class="fl">0.7926901</span> <span class="fl">0.3348631</span> <span class="fl">0.04543311</span> <span class="fl">0.1835925</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">6</span> <span class="fl">0.7929825</span> <span class="fl">0.3707344</span> <span class="fl">0.03656725</span> <span class="fl">0.1258099</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">11</span> <span class="fl">0.7979532</span> <span class="fl">0.3894589</span> <span class="fl">0.03274767</span> <span class="fl">0.1245565</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">head</span>(CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span><span class="sc">$</span>Pred_prob)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    zero   one</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  <span class="fl">0.992</span> <span class="fl">0.008</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  <span class="fl">0.124</span> <span class="fl">0.876</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  <span class="fl">0.290</span> <span class="fl">0.710</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="fl">0.742</span> <span class="fl">0.258</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="dv">33</span> <span class="fl">0.854</span> <span class="fl">0.146</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="dv">36</span> <span class="fl">0.750</span> <span class="fl">0.250</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span><span class="sc">$</span>Roc</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">multiclass.roc.default</span>(<span class="at">response =</span> Y.test, <span class="at">predictor =</span> Pred.prob)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>Data<span class="sc">:</span> multivariate predictor Pred.prob with <span class="dv">2</span> levels of Y.test<span class="sc">:</span> zero, one.</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>Multi<span class="sc">-</span>class area under the curve<span class="sc">:</span> <span class="fl">0.8182</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span><span class="sc">$</span>ConfMat</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>      Y.test</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>       zero one</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  zero   <span class="dv">29</span>   <span class="dv">4</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  one     <span class="dv">5</span>   <span class="dv">7</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span><span class="sc">$</span>ACC</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.8</span></span></code></pre></div>
+</div>
+</div>
+<div id="building-a-combined-performance" class="section level2">
+<h2>Building a Combined Performance</h2>
+<p><code>Estimate_Models</code> reported predictive results for both
+<code>political.afl == 0</code> and <code>political.afl == 1</code>.
+What we need is to combine these split data set to calculate over all
+the performance for the political affiliation data split.</p>
+<p>In the <code>pomodoro</code> <a
+href="https://cran.r-project.org/web/packages/pomodoro/pomodoro.pdf">help
+field</a> we can see that <code>Combined_Performance</code> was defined
+as <code>Combined_Performance(Sub.Est.Mdls)</code>.</p>
+<p>We have already defined all we need in <code>Estimate_Models</code>
+let`s bring them together.</p>
+<div id="implemantation-2" class="section level3">
+<h3>Implemantation</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Sub.CCP.RF <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Mdl.1 =</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+networth</span><span class="st">`</span>,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">Mdl.0 =</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.0+networth</span><span class="st">`</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>CCP.NoCCP.RF <span class="ot">&lt;-</span> <span class="fu">Combined_Performance</span>(Sub.CCP.RF)</span></code></pre></div>
+</div>
+<div id="results-of-the-combined_performance" class="section level3">
+<h3>Results of the <code>Combined_Performance</code></h3>
+<p>Using <code>attributes(CCP.NoCCP.RF)</code> we can see the outcomes
+of <code>Combined_Performance</code></p>
+<p><code>head(CCP.NoCCP.RF$Pred_prob)</code></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    zero   one</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="dv">58</span> <span class="fl">0.120</span> <span class="fl">0.880</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="dv">60</span> <span class="fl">0.822</span> <span class="fl">0.178</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="dv">61</span> <span class="fl">0.116</span> <span class="fl">0.884</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="dv">75</span> <span class="fl">0.980</span> <span class="fl">0.020</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="dv">80</span> <span class="fl">0.402</span> <span class="fl">0.598</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="dv">85</span> <span class="fl">0.950</span> <span class="fl">0.050</span></span></code></pre></div>
+<p><code>CCP.NoCCP.RF$Roc</code></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">multiclass.roc.default</span>(<span class="at">response =</span> Combine.Mdl<span class="sc">$</span>Actual, <span class="at">predictor =</span> Pred_prob)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>Data<span class="sc">:</span> multivariate predictor Pred_prob with <span class="dv">2</span> levels of Combine.Mdl<span class="sc">$</span>Actual<span class="sc">:</span> zero, one.</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>Multi<span class="sc">-</span>class area under the curve<span class="sc">:</span> <span class="fl">0.6929</span></span></code></pre></div>
+<p><code>CCP.NoCCP.RF$ConfMat</code></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>      one zero</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  one   <span class="dv">11</span>    <span class="dv">4</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  zero  <span class="dv">39</span>  <span class="dv">143</span></span></code></pre></div>
+<p><code>CCP.NoCCP.RF$ACC</code></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> CCP.RF<span class="sc">$</span>EstMdl<span class="sc">$</span><span class="st">`</span><span class="at">D.1+liquid.assets</span><span class="st">`</span><span class="sc">$</span>ACC</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7817259</span></span></code></pre></div>
+<blockquote>
+<p>Have Fun!</p>
+</blockquote>
+<!--\1  \( \LaTeX \)  Back to top [`<svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>`{=html}](#) \1-->
+<p><a href="#top" style="color:steelblue;" >Back to top</a> <a
+href="#"><svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:2em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg></a></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
