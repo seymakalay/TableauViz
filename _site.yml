@@ -5,11 +5,18 @@ navbar:
     - text: "Home"
       href: index.html
       icon: fa-home
+    - text: "Journal"
+      href: Journal.html
+      icon: fa-book
     - text: "Links"
       href: Links.html
       icon: fa-link
       menu:
       - text: "Multi layer 1"
+      - text: "Page 1"
+        href: pomodoro.tutorial.html
+      - text: "----" 
+      - text: "Multi layer 1.1"
       - text: "Page 1"
         href: pomodoro.tutorial.html
         menu:
