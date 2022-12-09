@@ -11,7 +11,7 @@
 
 
 
-<title>Journal.knit</title>
+<title>Journal</title>
 
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -412,7 +412,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Insert LOGO</a>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 30px;" src="img.png" /></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -423,19 +423,26 @@ div.tocify {
     Home
   </a>
 </li>
-<li>
-  <a href="Journal.html">
-    <span class="fa fa-book"></span>
-     
-    Write something
-  </a>
-</li>
-<li>
-  <a href="Links.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-link"></span>
      
     Links
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Multi layer 1</li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Page 1</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Multi layer 2</li>
+        <li>
+          <a href="pepe.tutorial.html">Page 2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -454,6 +461,7 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">Journal</h1>
 
 </div>
 
@@ -467,7 +475,7 @@ website. If you put a # in front of your text, it will create a top
 level-header.</p>
 <div id="my-first-post" class="section level1">
 <h1>My first post</h1>
-<p>2018 | 7 | 23 Last compiled: 2022-12-07</p>
+<p>2018 | 7 | 23 Last compiled: 2022-12-09</p>
 <p>Notice that whatever you define as a top level header, automatically
 gets put into the table of contents bar on the left.</p>
 <div id="second-level-header" class="section level2">
@@ -482,7 +490,7 @@ into the table of contents</p>
 </div>
 <div id="my-second-post-note-the-order" class="section level1">
 <h1>My second post (note the order)</h1>
-<p>2018 | 7 | 23 Last compiled: 2022-12-07</p>
+<p>2018 | 7 | 23 Last compiled: 2022-12-09</p>
 <p>I’m writing this tutorial going from the top down. And, this is how
 it will be printed. So, notice the second post is second in the list. If
 you want your most recent post to be at the top, then make a new post

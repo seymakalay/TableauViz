@@ -1,17 +1,23 @@
 name: "Insert LOGO"
 navbar:
-  title: "Insert LOGO"
+  title:  "<img id=\"logo\" style=\"width: 30px;\" src=\"img.png\" />"
   left:
     - text: "Home"
       href: index.html
       icon: fa-home
-    - text: "Write something"
-      href: Journal.html
-      icon: fa-book
     - text: "Links"
       href: Links.html
-      icon:  fa-link
+      icon: fa-link
+      menu:
+      - text: "Multi layer 1"
+      - text: "Page 1"
+        href: pomodoro.tutorial.html
+        menu:
+        - text: "Multi layer 2"
+        - text: "Page 2"
+          href: pepe.tutorial.html
   right:
     - href: https://github.com/seymakalay
       icon: fa-github  
 output_dir: "docs"
+
