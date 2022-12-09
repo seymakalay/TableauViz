@@ -11,20 +11,21 @@ navbar:
     - text: "Links"
       href: Links.html
       icon: fa-link
+    - text: "Multi Layers"
+      icon: fa-box
       menu:
-      - text: "Multi layer 1"
-      - text: "Page 1"
+      - text: "Menu"
         href: pomodoro.tutorial.html
-      - text: "----" 
-      - text: "Multi layer 1.1"
-      - text: "Page 1"
-        href: pomodoro.tutorial.html
+      - text: "SubMenu"
         menu:
-        - text: "Multi layer 2"
-        - text: "Page 2"
-          href: pepe.tutorial.html
+        - text: "Item1"
+          href: pepe.tutorial.html 
+        - text: "Item2"
+          href: https://getbootstrap.com/docs/4.4/components/alerts/
   right:
     - href: https://github.com/seymakalay
       icon: fa-github  
 output_dir: "docs"
 
+
+ 

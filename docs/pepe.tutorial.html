@@ -412,7 +412,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Insert LOGO</a>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 30px;" src="img.png" /></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -427,15 +427,29 @@ div.tocify {
   <a href="Journal.html">
     <span class="fa fa-book"></span>
      
-    Write something
+    Journal
   </a>
 </li>
-<li>
-  <a href="Links.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-link"></span>
      
     Links
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Multi layer 1</li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Page 1</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Multi layer 2</li>
+        <li>
+          <a href="pepe.tutorial.html">Page 2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -444,26 +458,6 @@ div.tocify {
     <span class="fa fa-github"></span>
      
   </a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-rocket"></span>
-     
-    Tutorials
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Machine Learning</li>
-    <li>
-      <a href="pomodoro.tutorial.html">pomodoro</a>
-    </li>
-    <li class="divider"></li>
-    <li class="dropdown-header">Data Visualization</li>
-    <li>
-      <a href="pepe.tutorial.html">pepe</a>
-    </li>
-  </ul>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
