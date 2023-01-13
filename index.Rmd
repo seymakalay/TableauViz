@@ -22,15 +22,51 @@ output:
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
-# **DEMO WORK**
+# **Data Set** 
 
 
-1. Source code [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
+* Data source  [nycflights13](https://github.com/tidyverse/nycflights13) Version 1.0.2
+
+Description Airline on-time data for all flights departing NYC in 2013.
+Also includes useful 'metadata' on airlines, airports, weather, and
+planes.
 
 
-Just trying to combine HTML AND TABLEAU.
+# **Overview**
+
+This package contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) to destinations in the United States, Puerto Rico, and the American Virgin Islands) in 2013: 336,776 flights in total. To help understand what causes delays, it also includes a number of other useful datasets.
+
+This package provides the following data tables.
+
+* flights: all flights that departed from NYC in 2013
+* weather: hourly meterological data for each airport
+* planes: construction information about each plane
+* airports: airport names and locations
+* airlines: translation between two letter carrier codes and names
+If you're interested in other subsets of flight data, see:
+
+nycflights for flights departing from NYC in the last year.
+
+anyflights for flights departing from any airport in any year.
+
+airlines to maintain a local SQL database of all flight departure data.
 
 
+Last compiled: `r Sys.Date()`
+
+</div>
+<div class="col-sm-6">
+
+<!--  ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) -->
+
+<a href = "https://github.com/tidyverse/nycflights13">
+![](images/img.png)
+</a>
+</div>
+
+
+
+<!--  
 
 
 <div class='tableauPlaceholder' id='viz1670406155030' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16630826474040&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book2_16630826474040&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16630826474040&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>           
@@ -42,16 +78,5 @@ var divElement = document.getElementById('viz1670406155030');                   
 
 ```
 
-
-<!--  
-</div>
-<div class="col-sm-6">
-
-### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io)
-
-<a href = "https://crumplab.github.io">
-![](images/logo.png)
-</a>
-</div>
 
 -->

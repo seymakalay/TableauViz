@@ -1,6 +1,6 @@
 name: "Insert LOGO"
 navbar:
-  title:  "<img id=\"logo\" style=\"width: 30px;\" src=\"img.png\" />"
+  title:  "<img id=\"logo\" style=\"width: 30px;\" src=\"plane.png\" />"
   left:
     - text: "Home"
       href: index.html
