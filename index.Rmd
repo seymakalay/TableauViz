@@ -25,15 +25,19 @@ output:
 # **Data Set** 
 
 
-* Data source  [nycflights13](https://github.com/tidyverse/nycflights13) Version 1.0.2
+* Data source  [nycflights13](https://github.com/tidyverse/nycflights13) Versione 1.0.2
 
+<!--  ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) 
 Description Airline on-time data for all flights departing NYC in 2013.
 Also includes useful 'metadata' on airlines, airports, weather, and
 planes.
+-->
 
+* Descrizione Dati sulla puntualità della compagnia aerea per tutti i voli in partenza da New York nel 2013.
+Include anche utili "metadati" su compagnie aeree, aeroporti, meteo e aerei.
 
 # **Overview**
-
+<!-- 
 This package contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) to destinations in the United States, Puerto Rico, and the American Virgin Islands) in 2013: 336,776 flights in total. To help understand what causes delays, it also includes a number of other useful datasets.
 
 This package provides the following data tables.
@@ -50,7 +54,26 @@ nycflights for flights departing from NYC in the last year.
 anyflights for flights departing from any airport in any year.
 
 airlines to maintain a local SQL database of all flight departure data.
+-->
 
+Questo pacchetto contiene informazioni su tutti i voli partiti da New York (ad es. EWR, JFK e LGA) verso destinazioni negli Stati Uniti, Porto Rico e Isole Vergini Americane) nel 2013: 336.776 voli in totale. Per aiutare a capire cosa causa i ritardi, include anche una serie di altri set di dati utili.
+
+Questo pacchetto fornisce le seguenti tabelle di dati.
+
+* voli: tutti i voli partiti da New York nel 2013
+* meteo: dati metereologici orari per ogni aeroporto
+* aerei: informazioni sulla costruzione di ogni aereo
+* aeroporti: nomi e località degli aeroporti
+* compagnie aeree: traduzione tra codici e nomi di due vettori di lettere
+Se sei interessato ad altri sottoinsiemi di dati di volo, consulta:
+
+nycflights per i voli in partenza da New York nell'ultimo anno.
+
+anyflights per i voli in partenza da qualsiasi aeroporto in qualsiasi anno.
+
+compagnie aeree per mantenere un database SQL locale di tutti i dati di partenza dei voli.
+
+---
 
 Last compiled: `r Sys.Date()`
 

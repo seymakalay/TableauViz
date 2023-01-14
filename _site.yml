@@ -5,26 +5,26 @@ navbar:
     - text: "Home"
       href: index.html
       icon: fa-home
-    - text: "Journal"
-      href: Journal.html
-      icon: fa-book
-    - text: "Links"
-      href: Links.html
-      icon: fa-link
-    - text: "Multi Layers"
-      icon: fa-box
+    - text: "Stats"
+      icon: fa-bars
       menu:
-      - text: "Menu"
-        href: pomodoro.tutorial.html
-      - text: "SubMenu"
+      - text: "Airport"
+        href: Stats.html
+      - text: "Carriers"
         menu:
         - text: "Item1"
           href: pepe.tutorial.html 
         - text: "Item2"
           href: https://getbootstrap.com/docs/4.4/components/alerts/
+      
+    - text: "Map"
+      href: Map.html
+      icon: fa-globe
   right:
     - href: https://github.com/seymakalay
       icon: fa-github  
+    - text: "Contatti"  
+    - href: https://www.visualitics.it/contatti/
 output_dir: "docs"
 
 

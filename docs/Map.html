@@ -11,7 +11,7 @@
 
 
 
-<title>Links.knit</title>
+<title>Map.knit</title>
 
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -219,69 +216,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -289,16 +223,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -322,34 +246,20 @@ div.tocify {
     Home
   </a>
 </li>
-<li>
-  <a href="Journal.html">
-    <span class="fa fa-book"></span>
-     
-    Journal
-  </a>
-</li>
-<li>
-  <a href="Links.html">
-    <span class="fa fa-link"></span>
-     
-    Links
-  </a>
-</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-box"></span>
+    <span class="fa fa-bars"></span>
      
-    Multi Layers
+    Stats
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="pomodoro.tutorial.html">Menu</a>
+      <a href="Stats.html">Airport</a>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">SubMenu</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Carriers</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="pepe.tutorial.html">Item1</a>
@@ -361,6 +271,13 @@ div.tocify {
     </li>
   </ul>
 </li>
+<li>
+  <a href="Map.html">
+    <span class="fa fa-globe"></span>
+     
+    Map
+  </a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -368,6 +285,10 @@ div.tocify {
     <span class="fa fa-github"></span>
      
   </a>
+</li>
+<li class="dropdown-header">Contatti</li>
+<li>
+  <a href="https://www.visualitics.it/contatti/"></a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -382,16 +303,23 @@ div.tocify {
 </div>
 
 
-<div id="r-and-r-studio" class="section level3">
-<h3>R and R-Studio</h3>
-<p><a href="http://www.r-project.org">R</a> is a free open-source
-programming language that can be used for statistical analysis,
-data-simulation, graphing, and lots of other stuff. Another free program
-is <a href="http://www.rstudio.com">R-studio</a>, that provides a nice
-graphic interface for R. Download R first, then download R-studio. Both
-can run on PCs, Macs or Linux. Students will be learning R in the stats
-labs using the lab manual <a href=""></a>.</p>
+<div id="viz1673714972767" class="tableauPlaceholder"
+style="position: relative">
+<noscript>
+<a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Destination_Map&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
+</noscript>
+<object class="tableauViz" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+<param name='embed_code_version' value='3' />
+<param name='site_root' value='' /><param name='name' value='Destination_Map&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Destination_Map&#47;Dashboard1&#47;1.png' />
+<param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' />
+</object>
 </div>
+<script type="text/javascript">
+var divElement = document.getElementById('viz1673714972767');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1000px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                       
+     
+
+</script>
 <div id="additional-r-resources" class="section level3">
 <h3>Additional R resources</h3>
 <ol style="list-style-type: decimal">
@@ -405,8 +333,6 @@ answered your question many ways.</li>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -439,35 +365,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

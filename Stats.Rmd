@@ -1,0 +1,81 @@
+---
+#title: "Journal"
+#output:
+#  html_document:
+#    toc: true
+#    toc_float: true
+#    collapsed: false
+#    number_sections: false
+#    toc_depth: 1
+#    #code_folding: hide
+title: ""
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+    toc: yes
+    toc_float: yes
+    collapsed: no
+    number_sections: no
+    toc_depth: 1
+  pdf_document:
+    toc: yes
+    toc_depth: '1'
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
+```
+
+
+# Objectives
+
+
+# Overview
+
+Flights :  On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013.
+
+year, month, day Date of departure.
+dep_time, arr_time Actual departure and arrival times (format HHMM or HMM), local tz.
+
+sched_dep_time, sched_arr_time Scheduled departure and arrival times (format HHMM or HMM),
+local tz.
+
+dep_delay, arr_delay Departure and arrival delays, in minutes. Negative times represent early
+departures/arrivals.
+
+carrier Two letter carrier abbreviation. See airlines to get name.
+
+flight Flight number.
+
+tailnum Plane tail number. See planes for additional metadata.
+
+origin, dest Origin and destination. See airports for additional metadata.
+
+
+
+air_time Amount of time spent in the air, in minutes.
+
+distance Distance between airports, in miles.
+
+hour, minute Time of scheduled departure broken into hour and minutes.
+
+time_hour Scheduled date and hour of the flight as a POSIXct date. Along with origin, can be
+used to join flights data to weather data.
+
+# Some Viz
+
+
+# Findings
+
+
+
+
+
+
+```{r}
+samples <- rnorm(100, mean=0, sd=1)
+hist(samples)
+```
+
