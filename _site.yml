@@ -23,8 +23,8 @@ navbar:
   right:
     - href: https://github.com/seymakalay
       icon: fa-github  
-    - text: "Contatti"  
-    - href: https://www.visualitics.it/contatti/
+    - text: "Contatti con noi"  
+      href: https://www.visualitics.it/contatti/
 output_dir: "docs"
 
 
