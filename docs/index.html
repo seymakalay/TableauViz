@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -246,31 +246,6 @@ $(document).ready(function () {
     Home
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-bars"></span>
-     
-    Stats
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="Stats.html">Airport</a>
-    </li>
-    <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Carriers</a>
-      <ul class="dropdown-menu" role="menu">
-        <li>
-          <a href="pepe.tutorial.html">Item1</a>
-        </li>
-        <li>
-          <a href="https://getbootstrap.com/docs/4.4/components/alerts/">Item2</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="Map.html">
     <span class="fa fa-globe"></span>
@@ -287,7 +262,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="https://www.visualitics.it/contatti/">Contatti con noi</a>
+  <a href="https://www.visualitics.it/contatti/">Contatti</a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -303,55 +278,38 @@ $(document).ready(function () {
 
 
 <style type="text/css">
-.title {
-  display: none;
+div.figure {
+  display: table;
+  float: right;
+  padding-left: 50px;
+  padding-bottom: 10px;
 }
-
-#getting-started img {
-  margin-right: 20px;
+div.figure p {
+  display: table-caption;
+  caption-side: bottom;
+  padding-left: 50px;
 }
-
 </style>
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
-<div id="data-set" class="section level1">
-<h1><strong>Data Set</strong></h1>
+<div id="data-set" class="section level3">
+<h3><strong>Data Set</strong></h3>
 <ul>
-<li>Data source <a
+<li><p>Data source <a
 href="https://github.com/tidyverse/nycflights13">nycflights13</a>
-Versione 1.0.2</li>
+Versione 1.0.2</p></li>
+<li><p>Descrizione Dati sulla puntualità della compagnia aerea per tutti
+i voli in partenza da New York nel 2013. Include anche utili “metadati”
+su compagnie aeree, aeroporti, meteo e aerei.</p></li>
 </ul>
-<!--  ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) 
-Description Airline on-time data for all flights departing NYC in 2013.
-Also includes useful 'metadata' on airlines, airports, weather, and
-planes.
--->
-<ul>
-<li>Descrizione Dati sulla puntualità della compagnia aerea per tutti i
-voli in partenza da New York nel 2013. Include anche utili “metadati” su
-compagnie aeree, aeroporti, meteo e aerei.</li>
-</ul>
+<div class="figure" style="text-align: right">
+<img src="images/destination.map2.png" alt="**Figura 1:**. Le partenze da EWR, JFK e LGA sono state dimostrate." width="450px" />
+<p class="caption">
+<strong>Figura 1:</strong>. Le partenze da EWR, JFK e LGA sono state
+dimostrate.
+</p>
 </div>
-<div id="overview" class="section level1">
-<h1><strong>Overview</strong></h1>
-<!-- 
-This package contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) to destinations in the United States, Puerto Rico, and the American Virgin Islands) in 2013: 336,776 flights in total. To help understand what causes delays, it also includes a number of other useful datasets.
-
-This package provides the following data tables.
-
-* flights: all flights that departed from NYC in 2013
-* weather: hourly meterological data for each airport
-* planes: construction information about each plane
-* airports: airport names and locations
-* airlines: translation between two letter carrier codes and names
-If you're interested in other subsets of flight data, see:
-
-nycflights for flights departing from NYC in the last year.
-
-anyflights for flights departing from any airport in any year.
-
-airlines to maintain a local SQL database of all flight departure data.
--->
+</div>
+<div id="overview" class="section level3">
+<h3><strong>Overview</strong></h3>
 <p>Questo pacchetto contiene informazioni su tutti i voli partiti da New
 York (ad es. EWR, JFK e LGA) verso destinazioni negli Stati Uniti, Porto
 Rico e Isole Vergini Americane) nel 2013: 336.776 voli in totale. Per
@@ -373,28 +331,8 @@ anno.</p>
 <p>compagnie aeree per mantenere un database SQL locale di tutti i dati
 di partenza dei voli.</p>
 <hr />
-<p>Last compiled: 2023-01-15</p>
+<p>Last compiled: 2023-01-16</p>
 </div>
-</div>
-<div class="col-sm-6">
-<!--  ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) -->
-<p><a href = "https://github.com/tidyverse/nycflights13"> <img
-src="images/img.png" /> </a></p>
-</div>
-<!--  
-
-
-<div class='tableauPlaceholder' id='viz1670406155030' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16630826474040&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book2_16630826474040&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16630826474040&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>           
-
-
-   
-<script type="text/javascript">
-var divElement = document.getElementById('viz1670406155030');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1000px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);               
-
-</script>
-
-
--->
 
 
 

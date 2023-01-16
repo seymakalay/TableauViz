@@ -4,7 +4,7 @@
 title: ""
 output:
   html_document:
-    theme: flatly
+    theme: yeti
     highlight: tango
 #title: ""
 #output:

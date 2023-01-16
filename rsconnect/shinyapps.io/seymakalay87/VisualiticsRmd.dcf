@@ -5,10 +5,10 @@ account: seymakalay87
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8040672
-bundleId: 6736091
+bundleId: 6739324
 url: https://seymakalay87.shinyapps.io/VisualiticsRmd/
-when: 1673800274.75709
-lastSyncTime: 1673800274.75711
+when: 1673877717.71317
+lastSyncTime: 1673877717.71326
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .RData|_site.yml|index.Rmd|Journal_files/figure-html/unnamed-chunk-1-1.png|Map.Rmd|nycflights13.lon.lat.xlsx|pepe.tutorial.Rmd|plane.png|pomodoro.tutorial.Rmd|README.md|Stats.Rmd|Stats_files/figure-html/unnamed-chunk-1-1.png|_site|docs|images|Journal_cache|TableauRmd
+ignoredFiles: .RData|Journal_files/figure-html/unnamed-chunk-1-1.png|nycflights13.lon.lat.xlsx|pepe.tutorial.Rmd|plane.png|pomodoro.tutorial.Rmd|README.md|Stats.Rmd|Stats_files/figure-html/unnamed-chunk-1-1.png|Stats_files/figure-html/unnamed-chunk-2-1.png

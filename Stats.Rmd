@@ -11,7 +11,7 @@
 title: ""
 output:
   html_document:
-    theme: flatly
+    theme: yeti
     highlight: tango
     toc: yes
     toc_float: yes
