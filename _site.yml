@@ -5,17 +5,6 @@ navbar:
     - text: "Home"
       href: index.html
       icon: fa-home
-   # - text: "Stats"
-      #icon: fa-bars
-      #menu:
-      #- text: "Airport"
-      #  href: Stats.html
-      #- text: "Carriers"
-       # menu:
-      #  - text: "Item1"
-      #    href: pepe.tutorial.html 
-      #  - text: "Item2"
-      #    href: https://getbootstrap.com/docs/4.4/components/alerts/
     - text: "Map"
       href: Map.html
       icon: fa-globe
