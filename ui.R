@@ -10,14 +10,14 @@ navbarPage(
   
   tabPanel(title = "Data",  icon = icon("database"), br(),
            
-           h5("The sample data of NYC13FLIGHTS."), 
-           tags$a( "Plese find more about in the following link", 
+           h5("I metadati di NYC13FLIGHTS."), 
+           tags$a( "Si prega di trovare ulteriori informazioni nel seguente link", 
                    href="https://cloud.r-project.org/web/packages/nycflights13/index.html"), br(),
            
-           HTML("Filter The Data Table Below, then click"),
+           HTML("Filtrare la tabella dei dati di seguito, e poi fare clic su"),
 
            downloadButton(outputId = "download_filtered",
-                          label = "Download Filtered Data"), br(),
+                          label = "Scarica Dati Filtrati"), br(),
            
            DT::dataTableOutput("dt")),
   

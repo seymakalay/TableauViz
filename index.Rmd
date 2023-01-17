@@ -4,7 +4,7 @@
 title: ""
 output:
   html_document:
-    theme: yeti
+    theme: flatly
     highlight: tango
 ---
 
@@ -31,14 +31,14 @@ div.figure p {
 ### **Data Set** 
 
 
-* Data source  [nycflights13](https://github.com/tidyverse/nycflights13) Versione 1.0.2
+* Data source  [nycflights13](https://github.com/tidyverse/nycflights13) Versione 1.0.2.
 
 * Descrizione Dati sulla puntualità della compagnia aerea per tutti i voli in partenza da New York nel 2013.
 Include anche utili "metadati" su compagnie aeree, aeroporti, meteo e aerei.
 
 
-```{r echo=FALSE,fig.cap="**Figura 1:**. Le partenze da EWR, JFK e LGA sono state dimostrate.", out.width='450px', fig.align='right'}
-knitr::include_graphics('images/destination.map2.png')
+```{r echo=FALSE,fig.cap="**Figura 1:** Voli frequenti.", out.width='500px', fig.align='left'}
+knitr::include_graphics('images/HexMap2.png')
 ```
 
 
@@ -52,14 +52,10 @@ Questo pacchetto fornisce le seguenti tabelle di dati.
 * meteo: dati metereologici orari per ogni aeroporto
 * aerei: informazioni sulla costruzione di ogni aereo
 * aeroporti: nomi e località degli aeroporti
-* compagnie aeree: traduzione tra codici e nomi di due vettori di lettere
-Se sei interessato ad altri sottoinsiemi di dati di volo, consulta:
 
-nycflights per i voli in partenza da New York nell'ultimo anno.
 
-anyflights per i voli in partenza da qualsiasi aeroporto in qualsiasi anno.
 
-compagnie aeree per mantenere un database SQL locale di tutti i dati di partenza dei voli.
+
 
 ---
 

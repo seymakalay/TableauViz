@@ -8,7 +8,18 @@ navbar:
     - text: "Map"
       href: Map.html
       icon: fa-globe
+    - text: "Download"
+      icon: fa-download
+      menu:
+      - text: "Report"
+        href: https://www.visualitics.it/contatti/
+      - text: '---------'
+      - text: "Data Set"
+        href: https://seymakalay87.shinyapps.io/VisualiticsRmd/
   right:
+    - text: ""
+      href: https://www.linkedin.com/company/visualitics/
+      icon: fa-linkedin
     - text: "Contatti"  
       href: https://www.visualitics.it/contatti/
 output_dir: "docs"

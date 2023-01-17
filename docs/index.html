@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -253,9 +253,34 @@ $(document).ready(function () {
     Map
   </a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-download"></span>
+     
+    Download
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://www.visualitics.it/contatti/">Report</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="https://seymakalay87.shinyapps.io/VisualiticsRmd/">Data Set</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="https://www.linkedin.com/company/visualitics/">
+    <span class="fa fa-linkedin"></span>
+     
+    
+  </a>
+</li>
+<li>
   <a href="https://www.visualitics.it/contatti/">Contatti</a>
 </li>
       </ul>
@@ -289,16 +314,15 @@ div.figure p {
 <ul>
 <li><p>Data source <a
 href="https://github.com/tidyverse/nycflights13">nycflights13</a>
-Versione 1.0.2</p></li>
+Versione 1.0.2.</p></li>
 <li><p>Descrizione Dati sulla puntualità della compagnia aerea per tutti
 i voli in partenza da New York nel 2013. Include anche utili “metadati”
 su compagnie aeree, aeroporti, meteo e aerei.</p></li>
 </ul>
-<div class="figure" style="text-align: right">
-<img src="images/destination.map2.png" alt="**Figura 1:**. Le partenze da EWR, JFK e LGA sono state dimostrate." width="450px" />
+<div class="figure" style="text-align: left">
+<img src="images/HexMap2.png" alt="**Figura 1:** Voli frequenti." width="500px" />
 <p class="caption">
-<strong>Figura 1:</strong>. Le partenze da EWR, JFK e LGA sono state
-dimostrate.
+<strong>Figura 1:</strong> Voli frequenti.
 </p>
 </div>
 </div>
@@ -315,17 +339,9 @@ set di dati utili.</p>
 <li>meteo: dati metereologici orari per ogni aeroporto</li>
 <li>aerei: informazioni sulla costruzione di ogni aereo</li>
 <li>aeroporti: nomi e località degli aeroporti</li>
-<li>compagnie aeree: traduzione tra codici e nomi di due vettori di
-lettere Se sei interessato ad altri sottoinsiemi di dati di volo,
-consulta:</li>
 </ul>
-<p>nycflights per i voli in partenza da New York nell’ultimo anno.</p>
-<p>anyflights per i voli in partenza da qualsiasi aeroporto in qualsiasi
-anno.</p>
-<p>compagnie aeree per mantenere un database SQL locale di tutti i dati
-di partenza dei voli.</p>
 <hr />
-<p>Last compiled: 2023-01-16</p>
+<p>Last compiled: 2023-01-17</p>
 </div>
 
 
