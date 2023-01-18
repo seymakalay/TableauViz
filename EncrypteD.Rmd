@@ -1,0 +1,11 @@
+---
+output: html_document
+params:
+  pwd:
+    label: "Enter the Password, please!"
+    value: ""
+    input: password
+---
+
+
+
