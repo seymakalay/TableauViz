@@ -1,0 +1,96 @@
+---
+title: ""
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+    toc: yes
+    toc_float: yes
+    collapsed: no
+    number_sections: no
+    toc_depth: 1
+  pdf_document:
+    toc: yes
+    toc_depth: '1'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+# **Dashboard 1** 
+
+## Describtive Stats
+<a href = "https://public.tableau.com/app/profile/seyma.kalay/viz/Destination_Map/Dsh1">
+```{r echo=FALSE , out.width='60%', out.extra='style="float:right; padding:10px"', fig.align='right'}
+knitr::include_graphics('images/Dsh1.png')
+```
+</a>
+
+
+* Total number of flight `EWR = 120.835, JFK = 111,279,` and `LGA = 104,662`
+
+* Most of the people prefer to travel in the morning/afternoon during the week days
+
+* Top destination **states:** `FL, CA, NC` and **cities:** `Chicago, Atlanta, Los Angeles`
+
+
+
+
+# **Dashboard 2** 
+
+# Describtive Stats
+<a href = "https://public.tableau.com/app/profile/seyma.kalay/viz/Destination_Map/Dsh2">
+```{r echo=FALSE , out.width='60%', out.extra='style="float:left; padding:10px"', fig.align='left'}
+knitr::include_graphics('images/Dsh2.png')
+```
+</a>
+
+
+* Top carries with the highest number of flights: `UA, B6,` and `EV`.
+
+* Carries UA, EV and DL flights 30, 30, and 26 distincts of countries and 47, 47, 37 cities, respectively.
+
+
+
+# **Dashboard 3** 
+
+## Map
+<a href = "https://public.tableau.com/app/profile/seyma.kalay/viz/Destination_Map/Dsh3">
+```{r echo=FALSE , out.width='60%', out.extra='style="float:right; padding:10px"', fig.align='right'}
+knitr::include_graphics('images/Dsh3.png')
+```
+</a>
+
+
+
+# **Dashboard 4** 
+
+## Stats
+<a href = "https://public.tableau.com/app/profile/seyma.kalay/viz/Destination_Map/Dsh4">
+```{r echo=FALSE , out.width='60%', out.extra='style="float:left; padding:10px"', fig.align='left'}
+knitr::include_graphics('images/Dsh3.png')
+```
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

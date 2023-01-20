@@ -12,7 +12,7 @@ navbar:
       icon: fa-download
       menu:
       - text: "Report"
-        href: https://www.visualitics.it/contatti/
+        href: Report.html
       - text: '---------'
       - text: "Data Set"
         href: https://seymakalay87.shinyapps.io/VisualiticsRmd/
