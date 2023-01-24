@@ -75,6 +75,7 @@ knitr::include_graphics('images/Dsh3.png')
 </a>
 
 
+Download <u><a href="./ReportPdf.pdf" target="_blank"> report </a></u>.
 
 
 
