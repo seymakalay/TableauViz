@@ -2,9 +2,50 @@ library("readxl"); library(dplyr); library(tidyr); library(ggplot2)
 
 flights_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "flights")
 weather_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "weather")
+names(weather_data)
+names(flights_data)
 
-#  8255 of departures getting cancelled
-sum(is.na(flights$dep_time)) 
+# 8255 of departures getting cancelled
+sum(is.na(flights_data$dep_time)) 
+
+
+flights_data <- flights_data[!flights_data$dep_time == "",]
+
+my.df <- dplyr::inner_join(flights_data, weather_data, by = c("origin", "time_hour"))
+names(my.df)
+
+
+my.df <- my.df %>% 
+     group_by(origin,dest) %>% 
+     mutate(count.flights = n()); names(a) #summarise(n = n())
+
+my.df$visib <- as.factor(my.df$visib)
+
+model <- lm(dep_delay ~  pressure + visib + count.flights,  data = my.df)
+summary(model)
+
+
+model <- lm(dep_delay ~  pressure + visib + pressure*visib,  data = my.df)
+summary(model)
+
+
+
+
+
+
+library(gmodels)
+CrossTable(my.df$dep_delay, my.df$origin,
+           expected=F, prop.r=T, prop.c=T, prop.t=T, prop.chisq=F, chisq = T)
+
+
+
+
+
+
+
+
+
+
 
 #REMOVING THE ROWS WHEN flights$dep_time == NA
 library(nycflights13)

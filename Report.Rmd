@@ -30,17 +30,19 @@ knitr::include_graphics('images/Dsh1.png')
 </a>
 
 
-* Total number of flight `EWR = 120.835, JFK = 111,279,` and `LGA = 104,662`
+* Il Numero totale di volo `EWR = 120.835, JFK = 111,279,` e `LGA = 104,662`,
 
-* Most of the people prefer to travel in the morning/afternoon during the week days
+* La maggior parte delle persone preferisce viaggiare al mattino/pomeriggio durante i giorni feriali,
 
-* Top destination **states:** `FL, CA, NC` and **cities:** `Chicago, Atlanta, Los Angeles`
+* La destinazione principale **Stati:** `FL, CA, NC` e **Citte:** `Chicago, Atlanta, Los Angeles`.
+
+
 
 
 
 # **Dashboard 2** 
 
-# Describtive Stats
+## Describtive Stats
 <a href = "https://public.tableau.com/app/profile/seyma.kalay/viz/Destination_Map/Dsh2">
 ```{r echo=FALSE,fig.cap="**Figura 2:** Dsh2", out.width='100%', fig.align='left'}
 knitr::include_graphics('images/Dsh2.png')
@@ -48,10 +50,9 @@ knitr::include_graphics('images/Dsh2.png')
 </a>
 
 
-* Top carries with the highest number of flights: `UA, B6,` and `EV`.
+* I top carries con il maggior numero di voli: `UA, B6,` e `EV`,
 
-* Carries UA, EV and DL flights 30, 30, and 26 distincts of countries and 47, 47, 37 cities, respectively.
-
+* Carries UA, EV e DL voli 30, 30, e 26 paesi distinto e 47, 47, 37 citte distinte, rispettivamente.
 
 
 # **Dashboard 3** 
@@ -63,6 +64,8 @@ knitr::include_graphics('images/Dsh3.png')
 ```
 </a>
 
+* Sono stati filtrati solo i valori rilevanti.
+ 
 
 
 # **Dashboard 4** 
@@ -70,12 +73,20 @@ knitr::include_graphics('images/Dsh3.png')
 ## Stats
 <a href = "https://public.tableau.com/app/profile/seyma.kalay/viz/Destination_Map/Dsh4">
 ```{r echo=FALSE,fig.cap="**Figura 4:** Dsh4", out.width='100%', fig.align='left'}
-knitr::include_graphics('images/Dsh3.png')
+knitr::include_graphics('images/Dsh4.png')
 ```
 </a>
 
+* I vettori F9, EV e YV hanno ritardi di partenza più elevati,
 
-Download <u><a href="./ReportPdf.pdf" target="_blank"> report </a></u>.
+* Il ritardo della partenza è massimo durante l'estate e durante le vacanze di Natale,
+
+* Il ritardo medio alla partenza può essere aumentato se la visibilità in miglia è inferiore a 2 miglia all'ora.
+
+
+--- 
+
+Scarica <u><a href="./ReportPdf.pdf" target="_blank"> il rapporto  </a></u>.
 
 
 
