@@ -1,9 +1,47 @@
 library("readxl"); library(dplyr); library(tidyr); library(ggplot2)
 
+airport_location("YVR","IATA")
+
 flights_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "flights")
 weather_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "weather")
 names(weather_data)
 names(flights_data)
+
+View(flights_data)
+
+
+###Descriptive stats for canceled data
+library(nycflights13)
+mydf <- nycflights13::flights
+
+#mydf <- subset(mydf, is.na(dep_time))
+
+
+
+
+mydf <- mydf %>%
+               mutate(my.col = ifelse(is.na(dep_time), "Canceled",
+                                   ifelse(mydf$dep_delay > 0, "Delayed", "OnTime")))
+              
+      
+table(mydf$my.col)
+
+
+
+
+write.csv(mydf, "my.df.col.csv", row.names = FALSE)
+
+
+
+airport_location("YVR","IATA")
+
+
+
+
+
+a <- flights_data  %>% 
+  dplyr::mutate(my.col = ifelse(dep_delay == "" , "delay", "not"))
+
 
 # 8255 of departures getting cancelled
 sum(is.na(flights_data$dep_time)) 
