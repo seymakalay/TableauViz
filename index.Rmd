@@ -47,7 +47,7 @@ knitr::include_graphics('images/HexMap2.png')
 
 ### **Overview**
 
-Questo pacchetto contiene informazioni su tutti i voli partiti da New York (ad es. EWR, JFK e LGA) verso destinazioni negli Stati Uniti, Porto Rico e Isole Vergini Americane) nel 2013:  328.521 voli `(336.776-8255 hanno cancellato)` in totale. 
+Questo pacchetto contiene informazioni su tutti i voli partiti da New York (ad es. EWR, JFK e LGA) verso destinazioni negli Stati Uniti, Porto Rico e Isole Vergini Americane) nel 2013:  336.776 voli  in totale. 
 Per aiutare a capire cosa causa i ritardi, include anche una serie di altri set di dati utili.
 
 

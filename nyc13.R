@@ -1,13 +1,66 @@
-library("readxl"); library(dplyr); library(tidyr); library(ggplot2)
-
+library("readxl"); library(dplyr); library(tidyr); library(ggplot2); library(airportr)
+library("xlsx")
 airport_location("YVR","IATA")
+
 
 flights_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "flights")
 weather_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "weather")
+mystates_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "mystate")
+
+
 names(weather_data)
 names(flights_data)
 
-View(flights_data)
+
+
+
+
+df1 <- as.data.frame(a = c(1:4), b = c("a", "b", "c", "d"))  
+df2 <- as.data.frame(a = c(1,2,4))
+  
+
+expected.df2 <- as.data.frame(a = c(1,2,4,5), b = c("a", "b", "d", "NA")) 
+
+
+  
+
+#View(flights_data)
+
+airports_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "airports")
+airports_data$State.Name  <- state.name[match(airports_data$State, state.abb)]
+head(airports_data)
+names(airports_data)
+
+unique(airports_data$State.Name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+state_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "states")
+state_data$State.Name  <- state.name[match(state_data$STATE, state.abb)]
+head(state_data)
+
+
+state_data <- write.csv(state_data,  "state_data.csv",  row.names = FALSE)
+
+
+
+
+
+
+
+
 
 
 ###Descriptive stats for canceled data
@@ -65,16 +118,6 @@ summary(model)
 
 model <- lm(dep_delay ~  pressure + visib + pressure*visib,  data = my.df)
 summary(model)
-
-
-
-
-
-
-library(gmodels)
-CrossTable(my.df$dep_delay, my.df$origin,
-           expected=F, prop.r=T, prop.c=T, prop.t=T, prop.chisq=F, chisq = T)
-
 
 
 
