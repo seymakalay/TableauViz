@@ -20,6 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
+
+
 # **Dashboard 1** 
 
 ## Describtive Stats
@@ -30,12 +32,12 @@ knitr::include_graphics('images/Dsh1.png')
 </a>
 
 
-* Il Numero totale di volo `EWR = 120.835, JFK = 111,279,` e `LGA = 104,662`,
 
-* La maggior parte delle persone preferisce viaggiare al mattino/pomeriggio durante i giorni feriali,
+* Il Numero totale di voli avvenuti nel 2013 per **EWR è pari (=) 120.835**,  quelli della compagnia **JFK = 111,279** e, per finire, quelli **LGA = 104,662**.
 
-* La destinazione principale **Stati:** `FL, CA, NC` e **Citte:** `Chicago, Atlanta, Los Angeles`.
+* Come si può notare, la maggior parte delle persone ha preferito viaggiare **al mattino/pomeriggio durante i giorni feriali**.
 
+* Gli Stati di destinazione principale sono stati: **FL, CA, NC**; mentre le Città risultano essere **Chicago, Atlanta, Los Angeles**.
 
 
 
@@ -64,7 +66,7 @@ knitr::include_graphics('images/Dsh3.png')
 ```
 </a>
 
-* Sono stati filtrati solo i valori rilevanti.
+* Si noti bene che sono stati filtrati solo i valori rilevanti.
  
 
 
@@ -77,11 +79,12 @@ knitr::include_graphics('images/Dsh4.png')
 ```
 </a>
 
-* I vettori F9, EV e YV hanno ritardi di partenza più elevati,
+* Come si può osservare i vettori F9, EV e YV  hanno ritardi di partenza più elevati,
 
-* Il ritardo della partenza è massimo durante l'estate e durante le vacanze di Natale,
+* Si osserva  che  Il ritardo della partenza è stato  massimo durante l’estate e durante le vacanze di Natale, 
 
-* Il ritardo medio alla partenza può essere aumentato se la visibilità in miglia è inferiore a 2 miglia all'ora.
+* Inoltre, Il ritardo medio alla partenza è aumentato se la visibilità in miglia è inferiore a 2 miglia all’ora.
+
 
 
 --- 

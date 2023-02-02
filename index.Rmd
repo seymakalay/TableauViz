@@ -31,7 +31,7 @@ div.figure p {
 ### **Data Set** 
 
 
-* Data source  [nycflights13](https://github.com/tidyverse/nycflights13) Versione 1.0.2.
+* Data source  **[nycflights13](https://github.com/tidyverse/nycflights13)** Versione 1.0.2.
 
 <!--  * Descrizione Dati sulla puntualità della compagnia aerea per tutti i voli in partenza da New York nel 2013.
 Include anche utili "metadati" su compagnie aeree, aeroporti, meteo e aerei.
@@ -39,7 +39,7 @@ Include anche utili "metadati" su compagnie aeree, aeroporti, meteo e aerei.
 
 <!-- -->
 
-```{r echo=FALSE,fig.cap="**Figura 1:**[ Voli frequenti.](https://public.tableau.com/app/profile/seyma.kalay/viz/HexMap_16738875620310/HexMap2)", out.width='500px', fig.align='left'}
+```{r echo=FALSE,fig.cap="**Figura 1:** **[Voli frequenti:](https://public.tableau.com/app/profile/seyma.kalay/viz/HexMap_16738875620310/HexMap2)** Se il cerchio e piu scuro allora i numeri di voli e piu ellavato.", out.width='500px', fig.align='left'}
 knitr::include_graphics('images/HexMap2.png')
 ```
 
@@ -47,17 +47,17 @@ knitr::include_graphics('images/HexMap2.png')
 
 ### **Overview**
 
-Questo pacchetto contiene informazioni su tutti i voli partiti da New York (ad es. EWR, JFK e LGA) verso destinazioni negli Stati Uniti, Porto Rico e Isole Vergini Americane) nel 2013:  336.776 voli  in totale. 
-Per aiutare a capire cosa causa i ritardi, include anche una serie di altri set di dati utili.
+Questo pacchetto contiene informazioni su tutti i voli partiti da New York (ad es. EWR, JFK e LGA) verso destinazioni negli Stati Uniti, Porto Rico e Isole Vergini Americane, nel 2013: 336.776 voli  in totale. 
+
+Per aiutare a capire cosa causa i ritardi, dunque,  include anche differenti  serie di altri set di dati utili.
 
 
+Questo pacchetto, perciò, fornisce le seguenti tabelle di dati che illustrano:
 
-Questo pacchetto fornisce le seguenti tabelle di dati.
-
-* voli: tutti i voli partiti da New York nel 2013
-* meteo: dati metereologici orari per ogni aeroporto
-* aerei: informazioni sulla costruzione di ogni aereo
-* aeroporti: nomi e località degli aeroporti
+* **i voli:** tutti i voli partiti da New York nel 2013
+* **le condizioni  meteo:** dati metereologici orari per ogni aeroporto
+* **gli aerei:** informazioni sulla costruzione di ogni aereo
+* **gli  aeroporti:** nomi e località degli aeroporti
 
 
 
