@@ -1,61 +1,25 @@
 library("readxl"); library(dplyr); library(tidyr); library(ggplot2); library(airportr)
 library("xlsx")
+
 airport_location("YVR","IATA")
 
 
 flights_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "flights")
 weather_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "weather")
-mystates_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "mystate")
+#mystates_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "mystate")
 
 
 names(weather_data)
 names(flights_data)
 
 
-
-
-
-df1 <- as.data.frame(a = c(1:4), b = c("a", "b", "c", "d"))  
-df2 <- as.data.frame(a = c(1,2,4))
-  
-
-expected.df2 <- as.data.frame(a = c(1,2,4,5), b = c("a", "b", "d", "NA")) 
-
-
-  
-
 #View(flights_data)
 
-airports_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "airports")
-airports_data$State.Name  <- state.name[match(airports_data$State, state.abb)]
+airports_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "states")
+airports_data$State.Name  <- state.name[match(airports_data$STATE, state.abb)]
 head(airports_data)
 names(airports_data)
-
 unique(airports_data$State.Name)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-state_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "states")
-state_data$State.Name  <- state.name[match(state_data$STATE, state.abb)]
-head(state_data)
-
-
-state_data <- write.csv(state_data,  "state_data.csv",  row.names = FALSE)
-
-
-
 
 
 
@@ -65,24 +29,47 @@ state_data <- write.csv(state_data,  "state_data.csv",  row.names = FALSE)
 
 ###Descriptive stats for canceled data
 library(nycflights13)
-mydf <- nycflights13::flights
+mydf2 <- nycflights13::flights
 
 #mydf <- subset(mydf, is.na(dep_time))
 
+mydf2 <- mydf2 %>%
+  mutate(my.col = ifelse(is.na(dep_time), "Canceled",
+                         ifelse(mydf2$dep_delay > 0, "Delayed", "OnTime")))
+
+
+table(mydf2$my.col)
+head(mydf2);names(weather_data)
+#write.csv(mydf, "my.df.col.csv", row.names = FALSE)
+
+mydf3 <- left_join(mydf2, weather_data, by = c("origin", "time_hour"))
+head(mydf3)
+names(mydf3)
+
+write.csv(mydf3, "mydf3.csv", row.names = FALSE)
 
 
 
-mydf <- mydf %>%
-               mutate(my.col = ifelse(is.na(dep_time), "Canceled",
-                                   ifelse(mydf$dep_delay > 0, "Delayed", "OnTime")))
-              
-      
-table(mydf$my.col)
+
+
+
+state_data <- read_excel("nycflights13.lon.lat.xlsx", sheet = "states")
+state_data$State.Name  <- state.name[match(state_data$STATE, state.abb)]
+head(state_data)
+#state_data <- write.csv(state_data,  "state_data.csv",  row.names = FALSE)
 
 
 
 
-write.csv(mydf, "my.df.col.csv", row.names = FALSE)
+
+
+
+
+
+
+
+
+
 
 
 
