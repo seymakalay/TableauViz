@@ -11,7 +11,7 @@ navbarPage(
   tabPanel(title = "Data",  icon = icon("database"), br(),
            
            h5("I metadati di NYC13FLIGHTS."), 
-           tags$a( "Si prega di trovare ulteriori informazioni nel seguente link", 
+           tags$a( "Si prega di trovare ulteriori informazioni a seguente link", 
                    href="https://cloud.r-project.org/web/packages/nycflights13/index.html"), br(),
            
            HTML("Filtrare la tabella dei dati di seguito, e poi fare clic su"),
