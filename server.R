@@ -4,6 +4,9 @@
 
 data_table <- as.data.frame(read.csv("nycflights13.lon.lat.csv",sep = ",", header = TRUE))
 
+data_table$dest <- factor(data_table$dest)
+data_table$origin <- factor(data_table$origin)
+
 data_table <- data_table[1:1000,]
 
 function(input, output) {

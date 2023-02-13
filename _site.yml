@@ -18,10 +18,10 @@ navbar:
         href: https://seymakalay87.shinyapps.io/VisualiticsRmd/
   right:
     - text: ""
-      href: https://www.linkedin.com/company/visualitics/
+      href: https://www.linkedin.com/in/seymakalay/
       icon: fa-linkedin
     - text: "Contatti"  
-      href: https://www.visualitics.it/contatti/
+      href: https://seymakalay.github.io/unibg/
 output_dir: "docs"
 
 
