@@ -20,8 +20,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-
-
 # **Dashboard 1** 
 
 ## Describtive Stats
